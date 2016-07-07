@@ -1,0 +1,220 @@
+/*
+LESS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: @icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+@icon-home: x y offset_x offset_y width height total_width total_height image_path name;
+
+At the bottom of this section, we provide information about the spritesheet itself
+@spritesheet: width height image @spritesheet-sprites;
+*/
+@arrow-name: 'arrow';
+@arrow-x: 0px;
+@arrow-y: 0px;
+@arrow-offset-x: 0px;
+@arrow-offset-y: 0px;
+@arrow-width: 199px;
+@arrow-height: 140px;
+@arrow-total-width: 359px;
+@arrow-total-height: 308px;
+@arrow-image: 'index-sprite.png';
+@arrow: 0px 0px 0px 0px 199px 140px 359px 308px 'index-sprite.png' 'arrow';
+@icon-car-name: 'icon-car';
+@icon-car-x: 0px;
+@icon-car-y: 231px;
+@icon-car-offset-x: 0px;
+@icon-car-offset-y: -231px;
+@icon-car-width: 85px;
+@icon-car-height: 77px;
+@icon-car-total-width: 359px;
+@icon-car-total-height: 308px;
+@icon-car-image: 'index-sprite.png';
+@icon-car: 0px 231px 0px -231px 85px 77px 359px 308px 'index-sprite.png' 'icon-car';
+@icon-check-name: 'icon-check';
+@icon-check-x: 316px;
+@icon-check-y: 182px;
+@icon-check-offset-x: -316px;
+@icon-check-offset-y: -182px;
+@icon-check-width: 24px;
+@icon-check-height: 24px;
+@icon-check-total-width: 359px;
+@icon-check-total-height: 308px;
+@icon-check-image: 'index-sprite.png';
+@icon-check: 316px 182px -316px -182px 24px 24px 359px 308px 'index-sprite.png' 'icon-check';
+@icon-clean-name: 'icon-clean';
+@icon-clean-x: 284px;
+@icon-clean-y: 0px;
+@icon-clean-offset-x: -284px;
+@icon-clean-offset-y: 0px;
+@icon-clean-width: 75px;
+@icon-clean-height: 91px;
+@icon-clean-total-width: 359px;
+@icon-clean-total-height: 308px;
+@icon-clean-image: 'index-sprite.png';
+@icon-clean: 284px 0px -284px 0px 75px 91px 359px 308px 'index-sprite.png' 'icon-clean';
+@icon-cool-name: 'icon-cool';
+@icon-cool-x: 85px;
+@icon-cool-y: 140px;
+@icon-cool-offset-x: -85px;
+@icon-cool-offset-y: -140px;
+@icon-cool-width: 85px;
+@icon-cool-height: 91px;
+@icon-cool-total-width: 359px;
+@icon-cool-total-height: 308px;
+@icon-cool-image: 'index-sprite.png';
+@icon-cool: 85px 140px -85px -140px 85px 91px 359px 308px 'index-sprite.png' 'icon-cool';
+@icon-experience-name: 'icon-experience';
+@icon-experience-x: 0px;
+@icon-experience-y: 140px;
+@icon-experience-offset-x: 0px;
+@icon-experience-offset-y: -140px;
+@icon-experience-width: 85px;
+@icon-experience-height: 91px;
+@icon-experience-total-width: 359px;
+@icon-experience-total-height: 308px;
+@icon-experience-image: 'index-sprite.png';
+@icon-experience: 0px 140px 0px -140px 85px 91px 359px 308px 'index-sprite.png' 'icon-experience';
+@icon-garanty-name: 'icon-garanty';
+@icon-garanty-x: 170px;
+@icon-garanty-y: 140px;
+@icon-garanty-offset-x: -170px;
+@icon-garanty-offset-y: -140px;
+@icon-garanty-width: 85px;
+@icon-garanty-height: 86px;
+@icon-garanty-total-width: 359px;
+@icon-garanty-total-height: 308px;
+@icon-garanty-image: 'index-sprite.png';
+@icon-garanty: 170px 140px -170px -140px 85px 86px 359px 308px 'index-sprite.png' 'icon-garanty';
+@icon-loupe-name: 'icon-loupe';
+@icon-loupe-x: 284px;
+@icon-loupe-y: 182px;
+@icon-loupe-offset-x: -284px;
+@icon-loupe-offset-y: -182px;
+@icon-loupe-width: 32px;
+@icon-loupe-height: 32px;
+@icon-loupe-total-width: 359px;
+@icon-loupe-total-height: 308px;
+@icon-loupe-image: 'index-sprite.png';
+@icon-loupe: 284px 182px -284px -182px 32px 32px 359px 308px 'index-sprite.png' 'icon-loupe';
+@icon-name-name: 'icon-name';
+@icon-name-x: 340px;
+@icon-name-y: 182px;
+@icon-name-offset-x: -340px;
+@icon-name-offset-y: -182px;
+@icon-name-width: 16px;
+@icon-name-height: 20px;
+@icon-name-total-width: 359px;
+@icon-name-total-height: 308px;
+@icon-name-image: 'index-sprite.png';
+@icon-name: 340px 182px -340px -182px 16px 20px 359px 308px 'index-sprite.png' 'icon-name';
+@icon-phone-name: 'icon-phone';
+@icon-phone-x: 199px;
+@icon-phone-y: 91px;
+@icon-phone-offset-x: -199px;
+@icon-phone-offset-y: -91px;
+@icon-phone-width: 20px;
+@icon-phone-height: 20px;
+@icon-phone-total-width: 359px;
+@icon-phone-total-height: 308px;
+@icon-phone-image: 'index-sprite.png';
+@icon-phone: 199px 91px -199px -91px 20px 20px 359px 308px 'index-sprite.png' 'icon-phone';
+@icon-price-name: 'icon-price';
+@icon-price-x: 199px;
+@icon-price-y: 0px;
+@icon-price-offset-x: -199px;
+@icon-price-offset-y: 0px;
+@icon-price-width: 85px;
+@icon-price-height: 91px;
+@icon-price-total-width: 359px;
+@icon-price-total-height: 308px;
+@icon-price-image: 'index-sprite.png';
+@icon-price: 199px 0px -199px 0px 85px 91px 359px 308px 'index-sprite.png' 'icon-price';
+@icon-time-name: 'icon-time';
+@icon-time-x: 284px;
+@icon-time-y: 91px;
+@icon-time-offset-x: -284px;
+@icon-time-offset-y: -91px;
+@icon-time-width: 61px;
+@icon-time-height: 91px;
+@icon-time-total-width: 359px;
+@icon-time-total-height: 308px;
+@icon-time-image: 'index-sprite.png';
+@icon-time: 284px 91px -284px -91px 61px 91px 359px 308px 'index-sprite.png' 'icon-time';
+@spritesheet-width: 359px;
+@spritesheet-height: 308px;
+@spritesheet-image: 'index-sprite.png';
+@spritesheet-sprites: @arrow @icon-car @icon-check @icon-clean @icon-cool @icon-experience @icon-garanty @icon-loupe @icon-name @icon-phone @icon-price @icon-time;
+@spritesheet: 359px 308px 'index-sprite.png' @spritesheet-sprites;
+
+/*
+The provided classes are intended to be used with the array-like variables
+
+.icon-home {
+  .sprite-width(@icon-home);
+}
+.icon-email {
+  .sprite(@icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.sprite-width(@sprite) {
+  width: extract(@sprite, 5);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 6);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 3);
+  @sprite-offset-y: extract(@sprite, 4);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite-image(@sprite) {
+  @sprite-image: extract(@sprite, 9);
+  @sprite-image-bare: ~`"@{sprite-image}".slice(1, -1)`;
+  background-image: url(@sprite-image-bare);
+}
+
+.sprite(@sprite) {
+  .sprite-image(@sprite);
+  .sprite-position(@sprite);
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+/*
+The `.sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of LESS
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+.sprites(@spritesheet-sprites);
+*/
+.sprites(@sprites, @i: 1) when (@i <= length(@sprites)) {
+  @sprite: extract(@sprites, @i);
+  @sprite-name: e(extract(@sprite, 10));
+  .@{sprite-name} {
+    .sprite(@sprite);
+  }
+  .sprites(@sprites, @i + 1);
+}
