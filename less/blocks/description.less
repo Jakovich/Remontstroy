@@ -1,0 +1,20 @@
+ol{
+  counter-reset: myCounter;
+}
+
+li{
+  list-style: none;
+}
+
+li:before {
+  counter-increment: myCounter;
+  content:counter(myCounter);
+  color: white;
+  background: #2980B9;
+  display: inline-block;
+  text-align: center;
+  margin: 5px 10px;
+  line-height: 40px;
+  width: 40px;
+  height: 40px;
+}
