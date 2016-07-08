@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="keywords" content="ремонт, ремонт под ключ, ремонт в Москве, сделать ремонт, качественный ремонт">
     <meta name="description" content="краткое описание">
-    <title>РемонтСтрой</title>
+    <title>РемонтСтрой - ремонт квартир и офисов в Москве и Подмосковье</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
@@ -17,7 +17,9 @@
           <div class="page-header__logo">
             <a href="#"><img src="img/logo.png" alt="РемонтСтрой" width="372" height="60"></a>
           </div>
-          <div class="page-header__slogan">Ремонт квартир и офисов в Москве и Подмосковье</div>
+          <div class="page-header__slogan">
+            <p>Ремонт квартир и офисов в Москве и Подмосковье</p>
+          </div>
           <div class="page-header__call">
             <div class="call-request">
               <div class="call-request__number">+7 (495) 374-50-10</div>
@@ -49,8 +51,8 @@
         <div class="intro__form">
           <form action="POST" class="call-master" name="call-master">
             <div class="call-master__title">Вызвать мастера и рассчитать смету БЕСПЛАТНО!</div>
-            <input type="text" class="call-master__input call-master__input--name" name="name" placeholder="Ваше имя">
-            <input type="tel" class="call-master__input call-master__input--phone" name="phone" placeholder="Ваш номер телефона">
+            <input type="text" class="call-master__input call-master__input--name" name="name" placeholder="Ваше имя" required>
+            <input type="tel" class="call-master__input call-master__input--phone" name="phone" placeholder="Ваш номер телефона" required>
             <button class="call-master__btn" type="submit">Вызвать мастера</button>
           </form>
         </div>
@@ -295,9 +297,9 @@
       <p class="popup-report__explic">Заполните форму и мы с Вами обязательно свяжемся</p>
       <form action="POST" name="report" class="popup-report__form">
         <label for="report-name">Имя:</label>
-        <input type="text" class="popup-report__input" name="name" id="report-name" placeholder="Введите свое имя">
+        <input type="text" class="popup-report__input" name="name" id="report-name" placeholder="Введите свое имя" required>
         <label for="report-phone">Телефон:</label>
-        <input type="text" class="popup-report__input" name="phone" id="report-phone" placeholder="(___) ___ - _____">
+        <input type="text" class="popup-report__input" name="phone" id="report-phone" placeholder="(___) ___ - _____" required>
         <label for="report-message">Текст сообщения:</label>
         <textarea class="popup-report__message" name="message_order" id="report-message" cols="30" rows="10" placeholder="Напишите здесь текст сообщения"></textarea>
         <button type="submit" class="popup-report__btn">Отправить</button>
