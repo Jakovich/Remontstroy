@@ -44,7 +44,7 @@
           <form action="POST" class="call-master" name="call-master">
             <div class="call-master__title">Вызвать мастера и рассчитать смету БЕСПЛАТНО!</div>
             <input type="text" class="call-master__input call-master__input--name" name="name" placeholder="Ваше имя">
-            <input type="tel" class="call-master__input call-master__input--tel" name="tel" placeholder="Ваш номер телефона">
+            <input type="tel" class="call-master__input call-master__input--phone" name="phone" placeholder="Ваш номер телефона">
             <button class="call-master__btn" type="submit">Вызвать мастера</button>
           </form>
         </div>
@@ -278,5 +278,21 @@
         </div>
       </div>
     </footer>
+    
+    <div class="popup-report">
+      <div class="popup-report__close"></div>
+      <h3 class="popup-report__title">Оформить заявку</h3>
+      <p class="popup-report__explic">Заполните форму и мы с Вами обязательно свяжемся</p>
+      <form action="POST" name="report" class="popup-report__form">
+        <label for="report-name">Имя:</label>
+        <input type="text" class="popup-report__input" name="name" id="report-name" placeholder="Введите свое имя">
+        <label for="request-phone">Телефон:</label>
+        <input type="text" class="popup-report__input" name="phone" id="report-phone" placeholder="(___) ___ - _____">
+        <label for="report-message">Текст сообщения:</label>
+        <textarea name="message_order" id="report-message" cols="30" rows="10" placeholder="Напишите здесь текст сообщения"></textarea>
+        <button type="submit" class="popup-report__btn">Отправить</button>
+      </form>
+      <p class="popup-report__bottom">Не любите отправлять заявки? тогда звоните +7(495) <span>374-5010</span></p>
+    </div>
   </body>
 </html>
