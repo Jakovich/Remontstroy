@@ -2,6 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="keywords" content="ремонт, ремонт под ключ, ремонт в Москве, сделать ремонт, качественный ремонт">
     <meta name="description" content="краткое описание">
     <title>РемонтСтрой</title>
@@ -11,31 +12,35 @@
   </head>
   <body>
     <header class="page-header">
-      <div class="page-header__top">
+      <div class="page-header__first-row">
         <div class="page-header__wrapper">
           <div class="page-header__logo">
             <a href="#"><img src="img/logo.png" alt="РемонтСтрой" width="372" height="60"></a>
           </div>
-          <div class="call-request">
-            <div class="call-request__number">+7 (495) 374-50-10</div>
-            <a class="call-request__link" href="#">Заказать звонок</a>
+          <div class="page-header__call">
+            <div class="call-request">
+              <div class="call-request__number">+7 (495) 374-50-10</div>
+              <a class="call-request__link" href="#">Заказать звонок</a>
+            </div>
           </div>
         </div>
       </div>
-      <nav class="main-nav">
+      <div class="page-header__second-row">
         <div class="page-header__wrapper">
-          <ul class="main-nav__items">
-            <li class="main-nav__item main-nav__item--active"><a href="#">Кто мы</a></li>
-            <li class="main-nav__item"><a href="#">Наши работы</a></li>
-            <li class="main-nav__item"><a href="#">Наши цены</a></li>
-            <li class="main-nav__item"><a href="#">Отзывы</a></li>
-            <li class="main-nav__item"><a href="#">Контакты</a></li>
-          </ul>
+          <nav class="main-nav">
+            <ul class="main-nav__items">
+              <li class="main-nav__item main-nav__item--active"><a href="#">Кто мы</a></li>
+              <li class="main-nav__item"><a href="#">Наши работы</a></li>
+              <li class="main-nav__item"><a href="#">Наши цены</a></li>
+              <li class="main-nav__item"><a href="#">Отзывы</a></li>
+              <li class="main-nav__item"><a href="#">Контакты</a></li>
+            </ul>
+          </nav>
         </div>
-      </nav>
+      </div>
     </header>
+    
     <main>
-      
       <section class="intro">
         <h1 class="intro__title">
           КАЧЕСТВЕННЫЙ РЕМОНТ <span>КВАРТИР И ОФИСОВ</span> "ПОД КЛЮЧ"
@@ -179,8 +184,7 @@
           <div class="reviews__contacts">Позвоните нам по телефону <span class="reviews__city-code">(495)</span> <span class="reviews__tel">374-5010</span></div>
         </div>
       </section> 
-        
-        
+            
       <section class="description">
         <h2 class="description__title">Как мы делаем <b>качественный ремонт</b> для Вас:</h2>
         <ol class="description__items">
@@ -250,19 +254,22 @@
        </div>
       </section>
     </main>
-    <footer class="page-footer"> 
-      <nav class="main-nav main-nav__footer">
-        <div class="page-footer__wrapper">
-          <ul class="main-nav__items">
-            <li class="main-nav__item"><a href="#">Кто мы</a></li>
-            <li class="main-nav__item"><a href="#">Наши работы</a></li>
-            <li class="main-nav__item"><a href="#">Наши цены</a></li>
-            <li class="main-nav__item"><a href="#">Отзывы</a></li>
-            <li class="main-nav__item"><a href="#">Контакты</a></li>
-          </ul>
+    
+    <footer class="page-footer">
+      <div class="page-footer__first-row">
+        <div class="page-footer__wrapper"> 
+          <nav class="main-nav main-nav--footer">
+            <ul class="main-nav__items">
+              <li class="main-nav__item"><a href="#">Кто мы</a></li>
+              <li class="main-nav__item"><a href="#">Наши работы</a></li>
+              <li class="main-nav__item"><a href="#">Наши цены</a></li>
+              <li class="main-nav__item"><a href="#">Отзывы</a></li>
+              <li class="main-nav__item"><a href="#">Контакты</a></li>
+            </ul>
+          </nav>
         </div>
-      </nav>
-      <div class="page-footer__bottom">
+      </div>
+      <div class="page-footer__second-row">
         <div class="page-footer__wrapper">
           <div class="page-footer__copyright">
             <p>
@@ -271,9 +278,11 @@
               &#x24B8; 2008-2015 Все права защищены
             </p>
           </div>
-          <div class="call-request">
-            <div class="call-request__number">+7 (495) 374-50-10</div>
-            <a class="call-request__link" href="#">Заказать звонок</a>
+          <div class="page-footer__call">
+            <div class="call-request">
+              <div class="call-request__number">+7 (495) 374-50-10</div>
+              <a class="call-request__link" href="#">Заказать звонок</a>
+            </div>
           </div>
         </div>
       </div>
@@ -286,13 +295,14 @@
       <form action="POST" name="report" class="popup-report__form">
         <label for="report-name">Имя:</label>
         <input type="text" class="popup-report__input" name="name" id="report-name" placeholder="Введите свое имя">
-        <label for="request-phone">Телефон:</label>
+        <label for="report-phone">Телефон:</label>
         <input type="text" class="popup-report__input" name="phone" id="report-phone" placeholder="(___) ___ - _____">
         <label for="report-message">Текст сообщения:</label>
-        <textarea name="message_order" id="report-message" cols="30" rows="10" placeholder="Напишите здесь текст сообщения"></textarea>
+        <textarea class="popup-report__message" name="message_order" id="report-message" cols="30" rows="10" placeholder="Напишите здесь текст сообщения"></textarea>
         <button type="submit" class="popup-report__btn">Отправить</button>
       </form>
       <p class="popup-report__bottom">Не любите отправлять заявки? тогда звоните +7(495) <span>374-5010</span></p>
     </div>
+    
   </body>
 </html>
