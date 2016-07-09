@@ -1,0 +1,66 @@
+.reviews {
+  background-color: @brown;
+  padding: 5px 0;
+}
+
+.reviews__wrapper {
+  width: 1180px;
+  margin: 0 auto;
+}
+
+.reviews__title {
+  color: @beige-title;
+  font-size: 50px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.reviews__items {
+  .clearfix();
+}
+
+.reviews__item {
+  float: left;
+  width: 50%;
+  font-size: 0;
+  position: relative;
+}
+
+.reviews__images {
+  padding: 0;
+  margin: 0;
+
+}
+
+.reviews__image {
+  display: inline-block;
+  position: relative;
+  &::before {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    background-image: url('../img/index-sprite.png');
+    background-position: @icon-loupe-offset-x @icon-loupe-offset-y;
+    width: @icon-loupe-width;
+    height: @icon-loupe-height;
+    z-index: 10;
+  }
+}
+
+.reviews__contacts {
+  text-align: center;
+  font-size: 34px;
+  color: @burgundy;
+  margin: 35px;
+}
+
+.reviews__city-code {
+  color: @beige-title;
+  font-style: italic;
+}
+
+.reviews__tel {
+  color: #ffffff;
+  font-style: italic;
+}
+

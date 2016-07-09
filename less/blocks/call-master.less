@@ -1,0 +1,62 @@
+.call-master {
+  background-color: #f2eadc;
+  border-radius: 5px;
+  text-align: center;
+  padding: 25px 30px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.6); 
+}
+
+.call-master__title {
+  color: @burgundy;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 30px;
+  margin-bottom: 30px;
+}
+
+.call-master__input {
+  width: 80%;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  margin-bottom: 10px;
+  padding: 10px 0;
+  padding-left: 40px;
+  position: relative;
+  border: 1px solid #d7c9b1;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url('../img/index-sprite.png');
+  }
+}
+
+.call-master__input--name {
+  &::before {
+    background-position: @icon-name-offset-x @icon-name-offset-y;
+    width: @icon-name-width;
+    height: @icon-name-height;
+  }
+
+}
+
+.call-master__btn {
+  background-color: #84b72c;
+  display: block;
+  width: 100%;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding-left: 40px;
+  padding: 10px 0;
+  margin: 0 auto;
+  margin-top: 10px;
+  cursor: pointer;
+}
