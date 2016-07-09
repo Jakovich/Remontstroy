@@ -1,0 +1,78 @@
+.prices {
+  background-color: @bg-prices;
+  padding: 10px 0;
+}
+
+.prices__wrapper {
+  width: 1180px;
+  margin: 0 auto;
+}
+
+.prices__title {
+  margin-top: 30px;
+  text-align: center;
+  color: @burgundy;
+  text-transform: uppercase;
+  font-size: 50px;
+}
+.prices__items {
+  .clearfix();
+}
+
+.prices__item {
+  background-color: #f2eadc;
+  float: left;
+  width: 280px;
+  margin-right: 10px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.6);
+  border-radius: 7px;
+  overflow: hidden;
+  
+}
+
+.prices__name {
+  margin: 0;
+  padding: 15px 0;
+  background-color: @burgundy;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.prices__amount {
+  color: @burgundy;
+  text-align: center;
+  font-size: 24px;
+  font-style: italic;
+  
+  span {
+    font-style: normal;
+    font-weight: bold;
+  }
+}
+
+.prices__explic {
+  color: #808080;
+  list-style: none;
+  padding: 0 20px;
+  
+  li {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 10px;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: @icon-check-width;
+      height: @icon-check-height;
+      background-image: url('../img/index-sprite.png');
+      background-position: @icon-check-offset-x @icon-check-offset-y;
+    }
+  }
+}
+
+.prices__link {
+  text-align: center;
+}

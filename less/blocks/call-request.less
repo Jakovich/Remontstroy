@@ -1,0 +1,36 @@
+.call-request__number {
+  font-size: 25px;
+  color: @burgundy;
+  font-weight: bold;
+  margin-bottom: 10px;
+  position: relative;
+  
+  &::before{
+    position: absolute;
+    content: '';
+    width: @icon-phone-dark-width;
+    height: @icon-phone-dark-height;
+    background-image: url('../img/index-sprite.png');
+    background-position: @icon-phone-dark-offset-x @icon-phone-dark-offset-y;
+    left: -40px;
+    top: 3px;
+  }
+  span {
+    font-weight: normal;
+    color: @brown;
+  }
+}
+
+.call-request__link {
+  font-weight: bold;
+  font-size: 16px;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: @bg-btn;
+  text-align: center;
+  padding: 12px 0;
+  border-radius: 5px;
+  border: 1px solid #bd8731;
+}
