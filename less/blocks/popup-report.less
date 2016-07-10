@@ -1,13 +1,12 @@
 .popup-report {
-  display: none;
   background-color: @burgundy;
-
   position: fixed;
   top: 150px;
-  width: 530px;
-  padding: 10px 25px;
+  width: 330px;
+  padding: 10px 100px;
   left: 50%;
   margin-left: -265px;
+  z-index: 20;
 }
 
 .popup-report__close {
@@ -46,6 +45,8 @@
 .popup-report__input {
   display: block;
   padding: 5px 0;
+  margin-top: 5px;
+  width: 100%;
 }
 
 .popup-report__phone-wrapper {
@@ -62,6 +63,7 @@ label[for=report-message] {
 .popup-report__message {
   width: 100%;
   padding: 5px 0;
+  margin-top: 5px;
 }
 
 .popup-report__btn {
@@ -94,6 +96,7 @@ label[for=report-message] {
 .popup-report__form {
   label {
     color: @beige-title;
+   
   }
 }
 
