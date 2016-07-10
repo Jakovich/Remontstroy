@@ -30,7 +30,7 @@
 
 .call-master label {
   position: relative;
-  &::before {
+  &:before {
     content: '';
     position: absolute;
     left: -220px;
@@ -41,7 +41,7 @@
 
 
 .call-master label[for=input-name] {
-  &::before {
+  &:before {
     background-position: @icon-name-offset-x @icon-name-offset-y;
     width: @icon-name-width;
     height: @icon-name-height;
@@ -50,7 +50,7 @@
 }
 
 .call-master label[for=input-phone] {
-  &::before {
+  &:before {
     background-position: @icon-phone-offset-x @icon-phone-offset-y;
     width: @icon-phone-width;
     height: @icon-phone-height;
@@ -73,4 +73,10 @@
   margin: 0 auto;
   margin-top: 10px;
   cursor: pointer;
+}
+
+@media (max-width: 840px) {
+  .call-master__title {
+    font-size: 21px;
+  }
 }

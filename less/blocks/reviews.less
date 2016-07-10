@@ -1,6 +1,15 @@
 .reviews {
   background-color: @brown;
-  padding: 5px 0;
+  padding: 75px 0;
+}
+
+.reviews__border {
+  width: 1300px;
+  margin: 0 auto;
+  border-radius: 25px;
+  border: 3px solid #e8dac3;
+  position: relative;
+  padding-top: 70px;
 }
 
 .reviews__wrapper {
@@ -9,6 +18,12 @@
 }
 
 .reviews__title {
+  z-index: 5;
+  position: absolute;
+  top: -70px;
+  left: 300px;
+  padding: 0 25px;
+  background-color: @brown;
   color: @beige-title;
   font-size: 50px;
   text-align: center;
@@ -20,10 +35,20 @@
 }
 
 .reviews__item {
-  float: left;
-  width: 50%;
+  width: 580px;
   font-size: 0;
   position: relative;
+  border: 3px solid #e8dac3;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.reviews__item--left {
+  float: left;
+}
+
+.reviews__item--right {
+  float: right;
 }
 
 .reviews__images {
@@ -35,8 +60,10 @@
 .reviews__image {
   display: inline-block;
   position: relative;
-  &::before {
+  outline: 3px solid #e8dac3;
+  &:before {
     position: absolute;
+    content: '';
     right: 5px;
     bottom: 5px;
     background-image: url('../img/index-sprite.png');

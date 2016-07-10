@@ -2,7 +2,7 @@
   background-image: url('../img/describe-bg.jpg');
   background-size: cover;
   background-position: top center;
-  padding: 5px 0;
+  padding-top: 35px;
 }
 
 .description__wrapper {
@@ -13,8 +13,16 @@
 
 .description__title {
   float: left;
-  width: 300px;
+  padding: 15px 35px;
+  width: 250px;
   margin-right: 100px;
+  background-color: rgba(0,0,0,0.4);
+  color: #ffffff;
+  font-style: italic;
+  font-size: 34px;
+  b {
+    color: @beige-title;
+  }
 }
 
 .description__items {
@@ -44,7 +52,7 @@
     padding-left: 10px;
   }
   
-  &::before {
+  &:before {
     position: absolute;
     left: 0;
     counter-increment: myCounter;
@@ -63,7 +71,7 @@
   }
   
   &:last-child {
-    &::before {
+    &:before {
       display: none;
       
     }

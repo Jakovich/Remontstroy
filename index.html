@@ -16,7 +16,14 @@
       <div class="page-header__first-row">
         <div class="page-header__wrapper">
           <div class="page-header__logo">
-            <a href="#"><img src="img/logo.png" alt="РемонтСтрой" width="372" height="60"></a>
+           
+            <a href="#">
+             <picture>
+                <source media="(max-width:1000px)" srcset="img/logo_sm.png">
+                <img src="img/logo.png" alt="РемонтСтрой">
+              </picture>
+              
+            </a>
           </div>
           <div class="page-header__slogan">
             <p>Ремонт квартир и офисов в&nbsp;Москве и Подмосковье</p>
@@ -85,7 +92,7 @@
               <p class="advantages__text">И контролируем наших мастеров полностью на всех этапах работ</p>
             </div>
             <div class="advantages__item advantages__item--price">
-              <h3 class="advantages__title">Доступне цены</h3>
+              <h3 class="advantages__title">Доступные цены</h3>
               <p class="advantages__text">Наши цены за такое высокое    качество Вас сильно обрадуют</p>
             </div>
             <div class="advantages__item advantages__item--clean">
@@ -97,10 +104,11 @@
       </section>
        
       <section class="reviews">
+        <div class="reviews__border">
         <div class="reviews__wrapper">
           <h2 class="reviews__title">Наши работы и отзывы о нас</h2>
           <div class="reviews__items">
-            <div class="reviews__item">
+            <div class="reviews__item reviews__item--left">
               <ul class="reviews__images">
                 <li class="reviews__image">
                   <a class="reviews__cboxExample" href="img/exmpl-1-big.jpg">
@@ -145,7 +153,7 @@
               </ul>
               <a class="reviews__link" href="#">Посмотреть другие работы</a>
             </div>
-            <div class="reviews__item">
+            <div class="reviews__item reviews__item--right">
               <ul class="reviews__images">
                 <li class="reviews__image">
                   <a class="reviews__cboxFeedback" href="img/feedback-1-big.jpg">
@@ -195,6 +203,7 @@
             <span class="reviews__city-code">(495)</span> 
             <span class="reviews__tel">374-5010</span>
           </div>
+        </div>
         </div>
       </section> 
             

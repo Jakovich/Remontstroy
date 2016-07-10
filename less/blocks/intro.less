@@ -6,8 +6,9 @@
 }
 
 .intro__wrapper {
-  width: 1180px;
+  max-width: 1180px;
   margin: 0 auto;
+  padding: 0 20px;
   .clearfix();
 }
 
@@ -16,12 +17,27 @@
   width: 760px;
   color: @beige-title;
   font-size: 46px;
+  margin-top: 0;
+  position: relative;
+  
+  &:after {
+    position: absolute;
+    content: '';
+    background-image: url('../img/index-sprite.png');
+    width: @arrow-width;
+    height: @arrow-height;
+    background-position: @arrow-offset-x @arrow-offset-y;
+    background-repeat: no-repeat;
+    right: -35px;
+    bottom: -155px;
+  }
   
   .intro__title-row {
     background-color: rgba(0,0,0,0.4);
     display: inline-block;
-    padding: 10px;
-    margin:0;
+    padding: 5px 13px;
+    padding-right: 20px;
+    margin: 0;
     margin-bottom: 10px;
   }
   
@@ -34,4 +50,31 @@
 .intro__form {
   float: right;
   width: 300px;
+}
+
+@media (max-width: 1200px) {
+  .intro__title {
+    font-size: 36px;
+    width: 620px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .intro__title {
+    font-size: 30px;
+    width: 530px;
+  }
+  .intro__form {
+    width: 260px;
+  }
+}
+
+@media (max-width: 840px) {
+    .intro__title {
+    font-size: 27px;
+    width: 470px;
+  }
+  .intro__form {
+    width: 255px;
+  }
 }

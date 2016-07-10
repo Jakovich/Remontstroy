@@ -5,10 +5,10 @@
 .advantages__wrapper {
   width: 1180px;
   margin: 0 auto;
-
 }
 
 .advantages__items {
+  text-align: center;
   padding: 35px 130px;
   padding-bottom: 0;
   .clearfix();
@@ -17,20 +17,27 @@
 .advantages__item {
   padding-top: 120px;
   position: relative;
-  float: left;
+  display: inline-block;
   width: 260px;
   margin-bottom: 50px;
+  margin-right: 60px;
   
-  &::before {
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+  
+  &:before {
     content: '';
     position: absolute;
     background-image: url('../img/index-sprite.png');
     top: 0;
+    left: 50%;
   }
 }
 
 .advantages__item--experience {
-  &::before {
+  &:before {
+    margin-left: -@icon-experience-width/2;
     background-position: @icon-experience-offset-x @icon-experience-offset-y;
     width: @icon-experience-width;
     height: @icon-experience-height;
@@ -38,7 +45,8 @@
 }
 
 .advantages__item--garanty {
-  &::before {
+  &:before {
+    margin-left: -@icon-garanty-width/2;
     background-position: @icon-garanty-offset-x @icon-garanty-offset-y;
     width: @icon-garanty-width;
     height: @icon-garanty-height;
@@ -46,7 +54,8 @@
 }
 
 .advantages__item--team {
-  &::before {
+  &:before {
+    margin-left: -@icon-team-width/2;
     background-position: @icon-team-offset-x @icon-team-offset-y;
     width: @icon-team-width;
     height: @icon-team-height;
@@ -54,7 +63,8 @@
 }
 
 .advantages__item--time {
-  &::before {
+  &:before {
+    margin-left: -@icon-time-width/2;
     background-position: @icon-time-offset-x @icon-time-offset-y;
     width: @icon-time-width;
     height: @icon-time-height;
@@ -62,7 +72,8 @@
 }
 
 .advantages__item--price {
-  &::before {
+  &:before {
+    margin-left: -@icon-price-width/2;
     background-position: @icon-price-offset-x @icon-price-offset-y;
     width: @icon-price-width;
     height: @icon-price-height;
@@ -70,7 +81,8 @@
 }
 
 .advantages__item--clean {
-  &::before {
+  &:before {
+    margin-left: -@icon-clean-width/2;
     background-position: @icon-clean-offset-x @icon-clean-offset-y;
     width: @icon-clean-width;
     height: @icon-clean-height;
