@@ -94,7 +94,7 @@ gulp.task("show", function(){
     ui: false
   });
   
-  gulp.watch("less/**/*.less", ["style"]);
+  gulp.watch("less/**/*.less", ["style"]).on("change", server.reload);
   gulp.watch("*.html", ["copyHtml"]).on("change", server.reload);
   gulp.watch("js/*.js", ["minjs"]).on("change", server.reload);
   gulp.watch("img/*", ["image"]).on("change", server.reload);

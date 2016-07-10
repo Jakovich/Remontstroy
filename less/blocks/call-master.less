@@ -24,23 +24,37 @@
   padding-left: 40px;
   position: relative;
   border: 1px solid #d7c9b1;
+ 
   
+}
+
+.call-master label {
+  position: relative;
   &::before {
     content: '';
     position: absolute;
-    left: 0;
+    left: -220px;
     top: 0;
     background-image: url('../img/index-sprite.png');
   }
 }
 
-.call-master__input--name {
+
+.call-master label[for=input-name] {
   &::before {
     background-position: @icon-name-offset-x @icon-name-offset-y;
     width: @icon-name-width;
     height: @icon-name-height;
   }
 
+}
+
+.call-master label[for=input-phone] {
+  &::before {
+    background-position: @icon-phone-offset-x @icon-phone-offset-y;
+    width: @icon-phone-width;
+    height: @icon-phone-height;
+  }
 }
 
 .call-master__btn {
