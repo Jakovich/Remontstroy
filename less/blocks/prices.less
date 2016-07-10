@@ -1,11 +1,13 @@
 .prices {
   background-color: @bg-prices;
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 .prices__wrapper {
-  width: 1180px;
+  max-width: 1180px;
+  min-width: 768px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .prices__title {
@@ -15,12 +17,12 @@
   text-transform: uppercase;
   font-size: 50px;
   position: relative;
-  
+  margin-bottom: 50px;
   &:before {
     content: '';
     position: absolute;
     left: 0;
-    width: 35%;
+    width: 34%;
     top: 25px;
     height: 3px;
     border-bottom: 2px dashed @burgundy; 
@@ -30,7 +32,7 @@
     content: '';
     position: absolute;
     right: 0;
-    width: 35%;
+    width: 34%;
     top: 25px;
     height: 3px;
     border-bottom: 2px dashed @burgundy; 
@@ -38,7 +40,7 @@
 }
 .prices__items {
   .clearfix();
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   text-align: center;
   font-size: 0;
 }
@@ -46,8 +48,9 @@
 .prices__item {
   background-color: #f2eadc;
   display: inline-block;
+  vertical-align: top;
   width: 280px;
-  margin-right: 40px;
+  margin-right: 3.5%;
   box-shadow: 5px 5px 10px rgba(0,0,0,0.6);
   border-radius: 7px;
   overflow: hidden;
@@ -60,11 +63,13 @@
 
 .prices__name {
   margin: 0;
-  padding: 15px 0;
+  padding: 15px 5px;
   background-color: @burgundy;
   color: #ffffff;
+  font-size: 25px;
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
+  
 }
 
 .prices__amount {
@@ -88,12 +93,13 @@
   li {
     position: relative;
     padding-left: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     
     &:before {
       content: '';
       position: absolute;
       left: 0;
+      top: 7px;
       width: @icon-check-width;
       height: @icon-check-height;
       background-image: url('../img/index-sprite.png');
@@ -111,6 +117,28 @@
   color: #ffffff;
   border-radius: 7px;
   text-decoration: none;
+  margin-top: 23px;
   margin-bottom: 20px;
   padding: 12px;
+}
+
+@media (max-width: 960px) {
+  .prices__item {
+    width: 235px;
+  }
+  
+  .prices__amount {
+    font-size: 20px;
+  }
+  
+  .prices__title {
+    &:before {
+      width: 30%
+    }
+      &:after {
+      width: 30%
+    }
+  }
+    
+    
 }
