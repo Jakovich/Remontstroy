@@ -89,14 +89,21 @@
   display: block;
   color: #ffffff;
   text-align: center;
-  background-color: @bg-btn;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 20px;
   text-decoration: none;
-  padding: 15px 20px;
+  padding: 12px 20px;
   border-radius: 10px;
   width: 100%;
+  background-color: @bg-btn;
+  background: linear-gradient(to top, #d59e47, #e5a94b);
+  box-shadow: 0 1.5px 2px rgba(255,255,255,0.3) inset;
+  &:hover {
+    background-color: #e9ae4f;
+    background: linear-gradient(to top, #e9ae4f, #fab952);
+    
+  }
 }
 
 @media (max-width: 1080px) {
@@ -123,6 +130,11 @@
     width: 500px;
     padding:0;
   }
+  
+  .description__link {
+    font-size: 16px;
+  }
+  
 }
 
 
