@@ -1,6 +1,5 @@
 .popup-report {
   display: none;
-  background-color: @burgundy;
   position: fixed;
   top: 150px;
   width: 330px;
@@ -8,6 +7,40 @@
   left: 50%;
   margin-left: -265px;
   z-index: 20;
+}
+
+.popup-report__bg {
+  background-color: @burgundy;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 150px;
+  right: 150px;
+  z-index: -1;
+  
+  &:before {
+    position: absolute;
+    content: '';
+    left: -200px;
+    top: 0;
+	width: 0;
+	height: 0;
+	border-top: 238px solid transparent;
+	border-right: 200px solid @burgundy;
+	border-bottom: 238px solid transparent;
+  }
+    
+  &:after {
+    position: absolute;
+    content: '';
+    right: -200px;
+    top: 0;
+    width: 0;
+	height: 0;
+	border-top: 238px solid transparent;
+	border-left: 200px solid @burgundy;
+	border-bottom: 238px solid transparent;
+  }
 }
 
 .popup-report__close {
@@ -23,7 +56,7 @@
   font-size: 38px;
   font-weigth: bold;
   cursor: pointer;
-  right: 10px;
+  right: 150px;
   top: 10px;
 }
 
