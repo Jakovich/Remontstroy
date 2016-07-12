@@ -6,10 +6,14 @@
     <meta name="keywords" content="ремонт, ремонт под ключ, ремонт в Москве, сделать ремонт, качественный ремонт">
     <meta name="description" content="краткое описание">
     <title>РемонтСтрой - ремонт квартир и офисов в Москве и Подмосковье</title>
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
+    <![endif]-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
   </head>
   <body>
     <header class="page-header">
@@ -66,7 +70,7 @@
               <label for="input-name"> </label>
               <input class="call-master__input" id="input-phone" type="tel"  name="phone" placeholder="Ваш номер телефона" required>
               <label for="input-phone"> </label>
-              <button class="call-master__btn" type="submit">Вызвать мастера</button>
+              <button class="call-master__btn basic-btn" type="submit">Вызвать мастера</button>
             </form>
           </div>
         </div>
@@ -307,7 +311,7 @@
           <div class="page-footer__call">
             <div class="call-request">
               <div class="call-request__number">+7 (495) 374-50-10</div>
-              <a class="call-request__link" href="#">Заказать звонок</a>
+              <a class="call-request__link basic-btn" href="#">Заказать звонок</a>
             </div>
           </div>
         </div>
@@ -335,6 +339,10 @@
       <p class="popup-report__bottom">Не любите отправлять заявки?<br>тогда звоните +7(495) <span>374-5010</span></p>
       
     </div>
-    
+    <script src="js/vendor/jquery.colorbox-min.js"></script>
+    <script src="js/vendor/inputmask.min.js"></script>
+    <script src="js/vendor/inputmask.phone.extensions.min.js"></script>
+    <script src="js/vendor/jquery.inputmask.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
