@@ -44,7 +44,7 @@
 }
 
 .reviews__item--left {
-  margin-right: 20px;
+  margin-right: 1.5%;
 }
 
 .reviews__images {
@@ -54,24 +54,26 @@
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 15px;
-}
-
-.reviews__image {
-  display: inline-block;
-  vertical-align: top;
   position: relative;
-  outline: 3px solid #e8dac3;
   &:before {
     position: absolute;
     content: '';
-    right: 5px;
-    bottom: 5px;
+    left: 95px;
+    top: 155px;
     background-image: url('../img/index-sprite.png');
     background-position: @icon-loupe-offset-x @icon-loupe-offset-y;
     width: @icon-loupe-width;
     height: @icon-loupe-height;
     z-index: 10;
   }
+}
+
+.reviews__image {
+  display: inline-block;
+  vertical-align: top;
+  outline: 3px solid #e8dac3;
+  width: 145px;
+  height: 200px;
 }
 
 .reviews__link {
@@ -104,13 +106,22 @@
 
 
 
-@media (max-width: 1265px) {
-  .reviews__border {
-    padding-top: 100px;
-  }
+
+@media (max-width:1300px) {
   
   .reviews__item--left {
     margin-right: 0;
+  }
+  
+  .reviews__title {
+    font-size: 48px;
+  }
+  
+}
+
+@media (max-width:1260px) {
+  .reviews__border {
+    padding-top: 100px;
   }
 }
 
