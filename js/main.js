@@ -11,7 +11,19 @@ $(document).ready(function(e) {
       'maxWidth' : '95%',
       'current' : ''
     });
-    $('#input-phone').inputmask("+7 (999) 999-9999");
+    $('#input-phone').inputmask("+7 (999) 999-9999")
+    $('#input-name').inputmask('Regex', { regex: "[A-Za-zА-Яа-яЁё]{3-20}" });
+    /*$('#input-name').inputmask("a{20}");*/
+    
+  
+  /*
+  let infoSup = document.createElement('sup');
+      infoSup.innerHTML = picturesQuantity;
+      let filterLabel = document.querySelector(`label[for=${filterId}]`);
+      
+      let next = filterLabel.nextSibling;
+filterBlock.insertBefore(infoSup, next);*/
+  
   
   // Респонсивный ColorBox
   jQuery.colorbox.settings.maxWidth  = '95%';
