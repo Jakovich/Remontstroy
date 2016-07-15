@@ -8,9 +8,9 @@
 
 .intro__wrapper {
   max-width: 1180px;
-  min-width: 768px;
+  min-width: 720px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 15px;
   .clearfix();
 }
 
@@ -75,11 +75,16 @@
 }
 
 @media (max-width: 850px) {
-    .intro__title {
+  .intro__title {
     font-size: 27px;
     width: 470px;
+      
+    &:after {
+      right: -10px;
+      bottom: -140px;
+    }
   }
   .intro__form {
-    width: 255px;
+    width: 250px;
   }
 }
