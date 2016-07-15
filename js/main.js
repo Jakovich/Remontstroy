@@ -11,9 +11,7 @@ $(document).ready(function(e) {
       'maxWidth' : '95%',
       'current' : ''
     });
-    $('#input-phone').inputmask("+7 (999) 999-9999", 
-                                { "onincomplete": function(){ alert('inputmask incomplete')}}
-                                 );
+    $('#input-phone').inputmask("+7 (999) 999-9999");
   
   // Респонсивный ColorBox
   jQuery.colorbox.settings.maxWidth  = '95%';
