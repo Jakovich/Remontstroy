@@ -4,6 +4,8 @@
   background-size: cover;
   background-position: center center;
   padding: 35px 0;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .intro__wrapper {
@@ -54,34 +56,46 @@
   width: 300px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1150px) {
   .intro__title {
-    font-size: 36px;
-    width: 620px;
+    font-size: 40px;
+    width: 670px;
+  }
+  
+  .intro__form {
+    width: 280px;
   }
 }
 
 @media (max-width: 1000px) {
   .intro {
-    background-image: url('../img/intro-bg-sm.jpg');
+    background-image: url('../img/intro-bg-md.jpg');
   }
   .intro__title {
-    font-size: 30px;
-    width: 530px;
+    font-size: 32px;
+    width: 545px;
   }
   .intro__form {
-    width: 260px;
+    width: 255px;
   }
 }
 
 @media (max-width: 850px) {
+  
+  .intro {
+    background-image: url('../img/intro-bg-sm.jpg');
+  }
+  
   .intro__title {
     font-size: 27px;
     width: 470px;
-      
+    
     &:after {
       right: -10px;
-      bottom: -140px;
+      bottom: -90px;
+      width: @arrow-sm-width;
+    height: @arrow-sm-height;
+    background-position: @arrow-sm-offset-x @arrow-sm-offset-y;  
     }
   }
   .intro__form {
