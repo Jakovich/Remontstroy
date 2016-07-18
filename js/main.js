@@ -30,6 +30,8 @@ $(document).ready(function(e) {
   /**
     Добавление масок для полей форм, валидация
   */
+  
+  /*------------------------------------------*/
   var validPhone = 0;
   var validName = 0;
   var popupValidPhone = 0;
@@ -55,21 +57,24 @@ $(document).ready(function(e) {
     var popupValidName = 1;
   };
   
+  /**
+    Валидация формы вызова мастера в секции intro
+  */
   
   //валидация поля телефон
   $('#input-phone').inputmask("+7 (999) 999-9999", 
     { "onincomplete": function() {
       validPhone = 0;
       $(this).addClass('call-master__input--invalid');
-      showErr('input-phone', 'Введите номер полностью');
+      showErr('input-phone', 'call-master__errorMsg', true, 'Введите номер полностью');
       },
       "oncomplete": function() {
       validPhone = 1;
       $(this).removeClass('call-master__input--invalid');
-      removeErr('input-phone');
+      removeErr('input-phone', 'call-master__errorMsg');
       },
      "onKeyValidation": function() {
-       removeErr('input-phone');
+       removeErr('input-phone', 'call-master__errorMsg');
      }
     }                         
   );
@@ -80,15 +85,15 @@ $(document).ready(function(e) {
       "onincomplete": function() {
         validName = 0;
       $(this).addClass('call-master__input--invalid');
-      showErr('input-name', 'Введите имя');
+      showErr('input-name', 'call-master__errorMsg', true, 'Введите имя');
       },
       "oncomplete": function() {
       validName = 1;
       $(this).removeClass('call-master__input--invalid');
-      removeErr('input-name');
+      removeErr('input-name', 'call-master__errorMsg');
       },
      "onKeyValidation": function() {
-       removeErr('input-name');
+       removeErr('input-name', 'call-master__errorMsg');
      },
     "placeholder": " ",
     "showMaskOnHover": false                      
@@ -103,7 +108,7 @@ $(document).ready(function(e) {
       $('#input-phone').addClass('call-master__input--invalid');
     
       if (!$("label[for='input-phone']").children().hasClass("call-master__errorMsg")){
-        showErr('input-phone', 'Введите номер телефона');
+        showErr('input-phone', 'call-master__errorMsg', true, 'Введите номер телефона');
       }
     }
     
@@ -111,72 +116,33 @@ $(document).ready(function(e) {
       evt.preventDefault();
       $('#input-name').addClass('call-master__input--invalid');
       if (!$("label[for='input-name']").children().hasClass("call-master__errorMsg")){
-        showErr('input-name', 'Введите имя');
+        showErr('input-name', 'call-master__errorMsg', true, 'Введите имя');
       }
     }
   });
   
-    /*$(document).mouseup(function (e){ // событие клика по веб-документу
-		var callMaster = $(".call-master"); // тут указываем ID элемента
-		if (!callMaster.is(e.target) // если клик был не по нашему блоку
-		    && callMaster.has(e.target).length === 0) { // и не по его дочерним элементам
-			removeErr('input-phone'); // скрываем его
-          console.log('sdf');
-		}
-	});*/
-  //функция показа сообщения об ошибки
-  function showErr(field, errorMessage) {
-    var errorSpan = document.createElement("span");
-    var errorMessage = document.createTextNode(errorMessage);
-
-    errorSpan.appendChild(errorMessage);
-    errorSpan.className = "call-master__errorMsg";
-
-    var $fieldLabel = $("label[for='" + field + "']");
-    $fieldLabel.append(errorSpan);
-  }
-  
-  //функция удаления сообщения об ошибке
-  
-  function removeErr(field) {
-    var $fieldLabel = $("label[for='" + field + "']");
-      
-    if ($fieldLabel.children().hasClass("call-master__errorMsg")){
-      $fieldLabel.find('.call-master__errorMsg').remove();
-    }
-  }
-  
-  function showErrorSign(field) {
-    var errorSpan = document.createElement("span");
-    errorSpan.className = "popup-report__error";
-    var $fieldLabel = $("label[for='" + field + "']");
-    $fieldLabel.append(errorSpan);
-  }
-  
-  function removeErrSign(field) {
-    var $fieldLabel = $("label[for='" + field + "']");
-      
-    if ($fieldLabel.children().hasClass("popup-report__error")){
-      $fieldLabel.find('.popup-report__error').remove();
-    }
-  }
+    
   
   
+ 
+  /**
+    Валидация формы попапа
+  */
   
   
   $('#report-phone').inputmask("+7 (999) 999-9999", {
     "onincomplete": function() {
       popupValidPhone = 0;
       $(this).addClass('popup-report__input--invalid');
-      showErrorSign('report-phone');
+      showErr('report-phone', 'popup-report__error');
       },
     "oncomplete": function() {
       popupValidPhone = 1;
       $(this).removeClass('popup-report__input--invalid');
-        removeErrSign('report-phone');
+        removeErr('report-phone', 'popup-report__error');
       },
      "onKeyValidation": function() {
-       removeErrSign('report-phone');
+       removeErr('report-phone', 'popup-report__error');
      }
       
     })
@@ -187,15 +153,15 @@ $(document).ready(function(e) {
       "onincomplete": function() {
         popupValidName = 0;
         $(this).addClass('popup-report__input--invalid');
-        showErrorSign('report-name');
+        showErr('report-name', 'popup-report__error');
         },
       "oncomplete": function() {
         popupValidName = 1;
         $(this).removeClass('popup-report__input--invalid');
-          removeErrSign('report-name');
+          removeErr('report-name', 'popup-report__error');
         },
        "onKeyValidation": function() {
-         removeErrSign('report-name');
+         removeErr('report-name', 'popup-report__error');
         }
     });
   
@@ -205,7 +171,7 @@ $(document).ready(function(e) {
         $('#report-phone').addClass('popup-report__input--invalid');
       
         if (!$("label[for='report-phone']").children().hasClass("popup-report__error")){
-          showErrorSign('report-phone');
+          showErr('report-phone', 'popup-report__error');
         }
       }
       
@@ -213,10 +179,54 @@ $(document).ready(function(e) {
         evt.preventDefault();
         $('#report-name').addClass('popup-report__input--invalid');
         if (!$("label[for='input-name']").children().hasClass("popup-report__error")){
-           showErrorSign('report-name');
+           showErr('report-name', 'popup-report__error');
         }
       }
     });
+  
+   /**
+    функция показа сообщения об ошибки
+  * @param {HTMLElement} field
+  * @param {string} errClass
+  * @param {boolean} text
+  * @param *{string} errorMessage
+  */
+  function showErr(field, errClass, text, errorMessage) {
+    var errorSpan = document.createElement("span");
+    
+    if (text) {
+      var errorMessage = document.createTextNode(errorMessage);
+      errorSpan.appendChild(errorMessage);
+    }
+    
+    errorSpan.className = errClass;
+
+    var $fieldLabel = $("label[for='" + field + "']");
+    $fieldLabel.append(errorSpan);
+  }
+  
+ /**
+    функция удаления сообщения об ошибки
+  * @param {HTMLElement} field
+  * @param {string} className
+  */
+  
+  function removeErr(field, className) {
+    var $fieldLabel = $("label[for='" + field + "']");
+      
+    if ($fieldLabel.children().hasClass(className)){
+      $fieldLabel.find('.' + className).remove();
+    }
+  }
    
+  
+  /*$(document).mouseup(function (e){ // событие клика по веб-документу
+		var callMaster = $(".call-master"); // тут указываем ID элемента
+		if (!callMaster.is(e.target) // если клик был не по нашему блоку
+		    && callMaster.has(e.target).length === 0) { // и не по его дочерним элементам
+			removeErr('input-phone'); // скрываем его
+          console.log('sdf');
+		}
+	});*/
 });
 
