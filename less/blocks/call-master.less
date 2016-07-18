@@ -30,6 +30,10 @@
   }
 }
 
+.call-master__input--invalid {
+  outline: 1px solid red;
+}
+
 .call-master label {
   display: block;
   position: relative;
@@ -59,6 +63,16 @@
     width: @icon-phone-width;
     height: @icon-phone-height;
   }
+}
+
+.call-master__errorMsg {
+  position: absolute;
+  color: red;
+  background-color: #ffffff;
+  right: 0;
+  padding: 4px;
+  font-size: 13px;
+  top: -4px;
 }
 
 .call-master__btn {
