@@ -32,6 +32,29 @@ $(document).ready(function(e) {
   */
   var validPhone = 0;
   var validName = 0;
+  var popupValidPhone = 0;
+  var popupValidName = 0;
+  //проверка после загрузки
+  var $inputedPhone = $('.call-master [name=phone]').val();
+  if (Inputmask.isValid($inputedPhone, { alias: "+7 (999) 999-9999"})){
+    var validPhone = 1;
+  };
+  
+  var $inputedName = $('.call-master [name=name]').val();
+  if (Inputmask.isValid($inputedName, { alias: "a{2,20} "})){
+    var validName = 1;
+  };
+  
+  var $inputedPhonePopup = $('.popup-report__form [name=phone]').val();
+  if (Inputmask.isValid($inputedPhonePopup, { alias: "+7 (999) 999-9999"})){
+    var popupValidPhone = 1;
+  };
+  
+  var $inputedNamePopup = $('.popup-report__form [name=name]').val();
+  if (Inputmask.isValid($inputedNamePopup, { alias: "a{2,20} "})){
+    var popupValidName = 1;
+  };
+  
   
   //валидация поля телефон
   $('#input-phone').inputmask("+7 (999) 999-9999", 
@@ -138,8 +161,7 @@ $(document).ready(function(e) {
     }
   }
   
-  var popupValidPhone = 0;
-  var popupValidName = 0;
+  
   
   
   $('#report-phone').inputmask("+7 (999) 999-9999", {
