@@ -1,4 +1,5 @@
 .popup-report {
+  display: none;
   position: fixed;
   top: 100px;
   width: 330px;
@@ -76,7 +77,7 @@
 }
 .popup-report__name-wrapper {
   float: left;
-  width: 45%;
+  width: 38%;
 }
 
 .popup-report__input {
@@ -87,6 +88,11 @@
   font-size: 14px;
   font-style: italic;
   color: #d69346;
+}
+
+.popup-report__input--invalid {
+  outline: 1px solid red;
+  color: red;
 }
 
 .popup-report__phone-wrapper {
@@ -148,8 +154,20 @@ label[for=report-message] {
 .popup-report__form {
   label {
     color: @beige-title;
-   font-size: 13px;
+    font-size: 13px;
+    position: relative;
   }
+}
+
+.popup-report__error {
+  position: absolute;
+  content: '';
+  width: @icon-error-width;
+  height: @icon-error-height;
+  background-image: url('../img/index-sprite.png');
+  background-position: @icon-error-offset-x @icon-error-offset-y;
+  left: -37px;
+  top: 20px;
 }
 
 .popup-report__overlay {
