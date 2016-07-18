@@ -1,7 +1,8 @@
 .popup-report {
   position: fixed;
-  top: 150px;
+  top: 100px;
   width: 330px;
+  height: 440px;
   padding: 10px 100px;
   left: 50%;
   margin-left: -265px;
@@ -9,36 +10,36 @@
 }
 
 .popup-report__bg {
-  background-color: @burgundy;
+  background-color: #6a2911;
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 150px;
-  right: 150px;
+  left: 130px;
+  right: 130px;
   z-index: -1;
   
   &:before {
     position: absolute;
     content: '';
-    left: -200px;
+    left: -140px;
     top: 0;
 	width: 0;
 	height: 0;
-	border-top: 238px solid transparent;
-	border-right: 200px solid @burgundy;
-	border-bottom: 238px solid transparent;
+	border-top: 230px solid transparent;
+	border-right: 140px solid #6a2911;
+	border-bottom: 230px solid transparent;
   }
     
   &:after {
     position: absolute;
     content: '';
-    right: -200px;
+    right: -140px;
     top: 0;
     width: 0;
 	height: 0;
-	border-top: 238px solid transparent;
-	border-left: 200px solid @burgundy;
-	border-bottom: 238px solid transparent;
+	border-top: 230px solid transparent;
+	border-left: 140px solid #6a2911;
+	border-bottom: 230px solid transparent;
   }
 }
 
@@ -47,7 +48,6 @@
   width: 29px;
   height: 29px;
   line-height: 20px;
- 
   text-align: center;
   border-radius: 50%;
   border: 1px solid @brown;
@@ -63,12 +63,16 @@
   text-align: center;
   text-transform: uppercase;
   color: @beige-title;
-  font-size: 18px;
+  font-size: 24px;
+  margin-bottom: 5px;
 }
 
 .popup-report__explic {
+  font-size: 19px;
+  margin-top: 0;
   text-align: center;
   color: @brown;
+  margin-bottom: 15px;
 }
 .popup-report__name-wrapper {
   float: left;
@@ -77,15 +81,18 @@
 
 .popup-report__input {
   display: block;
-  padding: 5px 0;
+  padding: 5px 5px;
   margin-top: 5px;
   width: 100%;
+  font-size: 14px;
+  font-style: italic;
+  color: #d69346;
 }
 
 .popup-report__phone-wrapper {
   float: right;
   width: 45%;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
 }
 
 label[for=report-message] {
@@ -95,30 +102,42 @@ label[for=report-message] {
 
 .popup-report__message {
   width: 100%;
-  padding: 5px 0;
+  padding: 5px 5px;
   margin-top: 5px;
+  font-size: 14px;
+  font-style: italic;
+  color: #d69346;
 }
 
 .popup-report__btn {
   display: block;
   margin: 0 auto;
   background-color: #d7c5ad;
+  background: linear-gradient(to top, #d9c3a9, #f0eeed);
   cursor: pointer;
-  padding: 10px 40px;
+  padding: 12px 30px;
+  width: 213px;
   color: @burgundy;
   outline: none;
   border: none;
   border-radius: 5px;
   text-transform: uppercase;
   font-weight: bold;
-  margin-top: 15px;
+  margin-top: 35px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+  
+  &:hover {
+    background-color: #ddba92;
+    background: linear-gradient(to top, #ddba92, #ece3d5);
+  }
 }
 
 .popup-report__bottom {
   text-align: center;
   color: @brown;
   font-style: italic;
-  
+  font-size: 18px;
+  margin-top: 15px;
   span {
     color: #ffffff;
     font-weight: bold;
@@ -129,7 +148,7 @@ label[for=report-message] {
 .popup-report__form {
   label {
     color: @beige-title;
-   
+   font-size: 13px;
   }
 }
 
@@ -142,7 +161,8 @@ label[for=report-message] {
   width: 100%;
   height: 100%;
   background-color: #000000;
-  opacity: 0.6;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
   z-index:10;
 }
 
