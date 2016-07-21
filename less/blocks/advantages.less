@@ -60,6 +60,7 @@
 
 .advantages__item--team {
   &:before {
+    top: 10px;
     margin-left: -@icon-team-width/2;
     background-position: @icon-team-offset-x @icon-team-offset-y;
     width: @icon-team-width;
@@ -116,4 +117,65 @@
   .advantages__title {
     width: 162px;
   }
+}
+
+@media (max-width: 1000px) {
+  .advantages__item { 
+    padding-top: 90px;
+  }
+  
+  .advantages__item--experience {
+  &:before {
+    margin-left: -@icon-experience-sm-width/2;
+    background-position: @icon-experience-sm-offset-x @icon-experience-sm-offset-y;
+    width: @icon-experience-sm-width;
+    height: @icon-experience-sm-height;
+  }
+}
+
+.advantages__item--garanty {
+  &:before {
+    margin-left: -@icon-garanty-sm-width/2;
+    background-position: @icon-garanty-sm-offset-x @icon-garanty-sm-offset-y;
+    width: @icon-garanty-sm-width;
+    height: @icon-garanty-sm-height;
+  }
+}
+
+.advantages__item--team {
+  &:before {
+    
+    margin-left: -@icon-team-sm-width/2;
+    background-position: @icon-team-sm-offset-x @icon-team-sm-offset-y;
+    width: @icon-team-sm-width;
+    height: @icon-team-sm-height;
+  }
+}
+
+.advantages__item--time {
+  &:before {
+    margin-left: -@icon-time-sm-width/2;
+    background-position: @icon-time-sm-offset-x @icon-time-sm-offset-y;
+    width: @icon-time-sm-width;
+    height: @icon-time-sm-height;
+  }
+}
+
+.advantages__item--price {
+  &:before {
+    margin-left: -@icon-price-sm-width/2;
+    background-position: @icon-price-sm-offset-x @icon-price-sm-offset-y;
+    width: @icon-price-sm-width;
+    height: @icon-price-sm-height;
+  }
+}
+
+.advantages__item--clean {
+  &:before {
+    margin-left: -@icon-clean-sm-width/2;
+    background-position: @icon-clean-sm-offset-x @icon-clean-sm-offset-y;
+    width: @icon-clean-sm-width;
+    height: @icon-clean-sm-height;
+  }
+}
 }

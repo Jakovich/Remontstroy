@@ -27,7 +27,17 @@
     position: relative;
     
     &:hover {
-      color: @yellow;  
+      color: @yellow; 
+      position: relative;
+      &::before {
+        position: absolute;
+        content: '';
+        left: -3px;
+        right: -3px;
+        height: 5px;
+        background-color: @yellow;
+        bottom: -16px;
+      }
     }
   }
 }

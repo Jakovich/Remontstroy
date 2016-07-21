@@ -14,7 +14,7 @@ $(document).ready(function(e) {
   $('.basic-btn').click(function(evt){   
     evt.preventDefault();
     $('.popup-report, .popup-report__overlay').fadeIn(500);
-    $('.popup-report #report-name').focus();
+    
   })
   //закрытие попапа при нажатии на крестик или по затемненному фону
   $('.popup-report__close, .popup-report__overlay').click(function(){
@@ -234,13 +234,26 @@ $(document).ready(function(e) {
   }
    
   
-  /*$(document).mouseup(function (e){ // событие клика по веб-документу
-		var callMaster = $(".call-master"); // тут указываем ID элемента
+  $(document).mouseup(function (e){ 
+		var callMaster = $(".call-master"); 
 		if (!callMaster.is(e.target) // если клик был не по нашему блоку
 		    && callMaster.has(e.target).length === 0) { // и не по его дочерним элементам
-			removeErr('input-phone'); // скрываем его
-          console.log('sdf');
+			removeErr('input-phone', 'call-master__errorMsg');
+            removeErr('input-name', 'call-master__errorMsg');
+            $('#input-name').removeClass('call-master__input--invalid');
+            $('#input-phone').removeClass('call-master__input--invalid');
 		}
-	});*/
+	})
+  
+  $(document).mouseup(function (e){ // событие клика по веб-документу
+		var callMaster = $(".popup-report"); // тут указываем ID элемента
+		if (!callMaster.is(e.target) // если клик был не по нашему блоку
+		    && callMaster.has(e.target).length === 0) { // и не по его дочерним элементам
+			removeErr('report-name', 'popup-report__error');
+            removeErr('report-phone', 'popup-report__error');
+            $('#report-name').removeClass('popup-report__input--invalid');
+            $('#report-phone').removeClass('popup-report__input--invalid');
+		}
+	})
 });
 
