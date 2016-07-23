@@ -1,7 +1,6 @@
 .advantages {
   background-color: @bg-adv;
-  max-width: 1400px;
-  margin: 0 auto;
+  
 }
 
 .advantages__wrapper {
@@ -59,6 +58,7 @@
 }
 
 .advantages__item--team {
+  margin-right: 0;
   &:before {
     top: 10px;
     margin-left: -@icon-team-width/2;
@@ -87,6 +87,7 @@
 }
 
 .advantages__item--clean {
+  margin-right: 0;
   &:before {
     margin-left: -@icon-clean-width/2;
     background-position: @icon-clean-offset-x @icon-clean-offset-y;
@@ -122,6 +123,10 @@
 @media (max-width: 1000px) {
   .advantages__item { 
     padding-top: 90px;
+  }
+  .advantages__title {
+    font-size: 20px;
+    width: 140px;
   }
   
   .advantages__item--experience {
