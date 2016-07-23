@@ -37,6 +37,15 @@ gulp.task("style", function(){
   .pipe(rename("style.min.css"))
   .pipe(gulp.dest("build/css"))
   .pipe(server.reload({stream: true}));
+  
+  gulp.src("less/ie/style_ie.less")
+  .pipe(plumber())
+  
+  .pipe(less())
+  .pipe(gulp.dest("build/css"))
+  .pipe(csso())
+  .pipe(rename("style_ie.min.css"))
+  .pipe(gulp.dest("build/css"))
 });
 
 gulp.task("minjs", function(){
