@@ -11,6 +11,7 @@ var csso = require("gulp-csso")
 var server = require("browser-sync");
 var rename = require("gulp-rename");
 var spritesmith = require("gulp.spritesmith");
+var concat = require("gulp-concat");
 
 gulp.task("style", function(){
   gulp.src("less/style.less")
@@ -87,13 +88,21 @@ gulp.task("copyHtml", function() {
   gulp.src("*.ico")
   .pipe(copy())
   .pipe(gulp.dest("build"))
-});
-
-gulp.task("copyJslib", function() {
-  gulp.src("js/vendor/*.js")
+  gulp.src("js/vendor/html5shiv.min.js")
   .pipe(copy())
   .pipe(gulp.dest("build/js/vendor"))
 });
+
+gulp.task("copyJslib", function() {
+  gulp.src(['js/vendor/inputmask.min.js', 'js/vendor/jquery.inputmask.min.js', 'js/vendor/inputmask.phone.extensions.min.js', 'js/vendor/respond.js'])
+  .pipe(concat('lib.js'))
+  .pipe(gulp.dest('build/js/vendor'))
+  .pipe(uglify())
+  .pipe(rename('lib.min.js'))
+  .pipe(gulp.dest('build/js/vendor'))
+});
+
+
 
 gulp.task("show", function(){
   server.init({
@@ -109,4 +118,4 @@ gulp.task("show", function(){
   gulp.watch("img/*", ["image"]).on("change", server.reload);
 });
 
-gulp.task("build", ["clean", "copyHtml", "copyJslib","style", "minjs", "image"]);
+gulp.task("build", ["clean", "copyHtml", "style", "copyJslib", "minjs", "image"]);

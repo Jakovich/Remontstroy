@@ -1,16 +1,7 @@
 
 "use strict";
 $(document).ready(function(e) {
-  /*if ($(window).width() < 750) {
-    var $view = $('head').find('meta[name=viewport]');
-    $view.remove();
-  }
-  $(window).resize(function() {
-    if ($(document).width() < 750) {
-      var $view = $('head').find('meta[name=viewport]');
-      $view.remove();
-    }
-  })*/
+  
   //добавление в head ссылки на googleFonts
   $("head").append("<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>");
   
@@ -54,14 +45,28 @@ $(document).ready(function(e) {
   var popupValidName = 0;
   //проверка после загрузки
   var $inputedPhone = $('.call-master [name=phone]').val();
+  if ($inputedPhone === '') {
+          validPhone = 0;
+  } else {
+          validPhone = 1;
+  }
   if (Inputmask.isValid($inputedPhone, { alias: "+7 (999) 999-9999"})){
-    var validPhone = 1;
+    var validPhone = 2;
   };
   
+  
+  
   var $inputedName = $('.call-master [name=name]').val();
+  if ($inputedName === '') {
+    validName = 0;
+  } else {
+    validName = 1;
+  }
   if (Inputmask.isValid($inputedName, { alias: "a{2,20} "})){
-    var validName = 1;
+    var validName = 2;
   };
+  
+  
   
   var $inputedPhonePopup = $('.popup-report__form [name=phone]').val();
   if (Inputmask.isValid($inputedPhonePopup, { alias: "+7 (999) 999-9999"})){
@@ -80,14 +85,17 @@ $(document).ready(function(e) {
   //валидация поля телефон
   $('#input-phone').inputmask("+7 (999) 999-9999", 
     { "onincomplete": function() {
-      validPhone = 0;
-      /*$(this).addClass('call-master__input--invalid');
-      showErr('input-phone', 'call-master__errorMsg', true, 'Введите номер полностью');*/
+      var $currentPhone = $('.call-master [name=phone]').val();
+        if ($currentPhone === '') {
+          validPhone = 0;
+        } else {
+          validPhone = 1;
+        }
       },
       "oncomplete": function() {
-      validPhone = 1;
-      $(this).removeClass('call-master__input--invalid');
-      removeErr('input-phone', 'call-master__errorMsg');
+        validPhone = 2;
+        $(this).removeClass('call-master__input--invalid');
+        removeErr('input-phone', 'call-master__errorMsg');
       },
      "onKeyValidation": function() {
        removeErr('input-phone', 'call-master__errorMsg');
@@ -99,17 +107,20 @@ $(document).ready(function(e) {
   $('#input-name').inputmask("a{2,20} [aa{2,20}]", 
     { 
       "onincomplete": function() {
-      
-        /*$(this).addClass('call-master__input--invalid');
-        showErr('input-name', 'call-master__errorMsg', true, 'Введите имя');*/
-        validName = 0;
-        },
+        var $currentName = $('.call-master [name=name]').val();
+        if ($currentName === '') {
+          validName = 0;
+        } else {
+          validName = 1;
+        }
+        
+      },
         
       
       "oncomplete": function() {
-      validName = 1;
-      $(this).removeClass('call-master__input--invalid');
-      removeErr('input-name', 'call-master__errorMsg');
+        validName = 2;
+        $(this).removeClass('call-master__input--invalid');
+        removeErr('input-name', 'call-master__errorMsg');
       },
      "onKeyValidation": function() {
        removeErr('input-name', 'call-master__errorMsg');
@@ -130,12 +141,28 @@ $(document).ready(function(e) {
         showErr('input-phone', 'call-master__errorMsg', true, 'Введите номер телефона');
       }
     }
+    if(validPhone === 1) {
+      evt.preventDefault();
+      $('#input-phone').addClass('call-master__input--invalid');
+    
+      if (!$("label[for='input-phone']").children().hasClass("call-master__errorMsg")){
+        showErr('input-phone', 'call-master__errorMsg', true, 'Введите номер телефона полностью');
+      }
+    }
     
     if(validName === 0) {
       evt.preventDefault();
       $('#input-name').addClass('call-master__input--invalid');
       if (!$("label[for='input-name']").children().hasClass("call-master__errorMsg")){
         showErr('input-name', 'call-master__errorMsg', true, 'Введите имя');
+      }
+    }
+    
+    if(validName === 1) {
+      evt.preventDefault();
+      $('#input-name').addClass('call-master__input--invalid');
+      if (!$("label[for='input-name']").children().hasClass("call-master__errorMsg")){
+        showErr('input-name', 'call-master__errorMsg', true, 'Введите имя минимум из двух символов');
       }
     }
   });
