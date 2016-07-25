@@ -146,7 +146,7 @@ $(document).ready(function(e) {
       $('#input-phone').addClass('call-master__input--invalid');
     
       if (!$("label[for='input-phone']").children().hasClass("call-master__errorMsg")){
-        showErr('input-phone', 'call-master__errorMsg', true, 'Введите номер телефона полностью');
+        showErr('input-phone', 'call-master__errorMsg', true, 'Введите номер полностью');
       }
     }
     
@@ -162,7 +162,7 @@ $(document).ready(function(e) {
       evt.preventDefault();
       $('#input-name').addClass('call-master__input--invalid');
       if (!$("label[for='input-name']").children().hasClass("call-master__errorMsg")){
-        showErr('input-name', 'call-master__errorMsg', true, 'Введите имя минимум из двух символов');
+        showErr('input-name', 'call-master__errorMsg', true, 'Введите имя минимум из 2 букв');
       }
     }
   });
