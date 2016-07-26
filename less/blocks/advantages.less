@@ -118,15 +118,20 @@
   .advantages__title {
     width: 162px;
   }
-}
-
-@media (max-width: 1000px) {
   .advantages__item { 
     padding-top: 90px;
+    margin-bottom: 30px;
+  }
+  .advantages__text {
+    font-size: 14px;
   }
   .advantages__title {
     font-size: 20px;
     width: 140px;
+  }
+  .advantages__items {
+    padding: 40px 8%;
+    padding-bottom: 20px;
   }
   
   .advantages__item--experience {
@@ -183,4 +188,73 @@
     height: @icon-clean-sm-height;
   }
 }
+}
+
+@media (max-width: 900px) {
+  .advantages__item { 
+    padding-top: 68px;
+    margin-bottom: 20px;
+  }
+  .advantages__title {
+    font-size: 19px;
+  }
+ .advantages__items {
+    padding: 30px 8%;
+    padding-bottom: 13px;
+  }
+  
+  .advantages__item--experience {
+  &:before {
+    margin-left: -@icon-experience-xsm-width/2;
+    background-position: @icon-experience-xsm-offset-x @icon-experience-xsm-offset-y;
+    width: @icon-experience-xsm-width;
+    height: @icon-experience-xsm-height;
+  }
+  }
+
+  .advantages__item--garanty {
+    &:before {
+      margin-left: -@icon-garanty-xsm-width/2;
+      background-position: @icon-garanty-xsm-offset-x @icon-garanty-xsm-offset-y;
+      width: @icon-garanty-xsm-width;
+      height: @icon-garanty-xsm-height;
+    }
+  }
+
+  .advantages__item--team {
+    &:before {
+      
+      margin-left: -@icon-team-xsm-width/2;
+      background-position: @icon-team-xsm-offset-x @icon-team-xsm-offset-y;
+      width: @icon-team-xsm-width;
+      height: @icon-team-xsm-height;
+    }
+  }
+
+  .advantages__item--time {
+    &:before {
+      margin-left: -@icon-time-xsm-width/2;
+      background-position: @icon-time-xsm-offset-x @icon-time-xsm-offset-y;
+      width: @icon-time-xsm-width;
+      height: @icon-time-xsm-height;
+    }
+  }
+
+  .advantages__item--price {
+    &:before {
+      margin-left: -@icon-price-xsm-width/2;
+      background-position: @icon-price-xsm-offset-x @icon-price-xsm-offset-y;
+      width: @icon-price-xsm-width;
+      height: @icon-price-xsm-height;
+    }
+  }
+
+  .advantages__item--clean {
+    &:before {
+      margin-left: -@icon-clean-xsm-width/2;
+      background-position: @icon-clean-xsm-offset-x @icon-clean-xsm-offset-y;
+      width: @icon-clean-xsm-width;
+      height: @icon-clean-xsm-height;
+    }
+  }
 }
