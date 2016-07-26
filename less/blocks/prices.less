@@ -108,7 +108,7 @@
       content: '';
       position: absolute;
       left: 0;
-      top: 7px;
+      top: 6px;
       width: @icon-check-width;
       height: @icon-check-height;
       background-image: url('../img/index-sprite.png');
@@ -143,9 +143,11 @@
 @media (max-width: 960px) {
   .prices {
     background-image: url('../img/price-bg-sm.jpg');
+    padding: 15px 0;
   }
   .prices__item {
     width: 220px;
+    font-size: 14px;
   }
   
   .prices__amount {
@@ -153,11 +155,11 @@
   }
   
   .prices__explic {
-    padding: 0 10px;
+    padding: 0 15px;
     li {
-      padding-left: 30px;
+      padding-left: 35px;
        &:before {
-        
+        top: 2px;
       }
     }
     
@@ -171,6 +173,12 @@
       &:after {
       width: 29%
     }
+  }
+  
+  .prices__name {
+    font-size: 23px;
+    padding: 12px 10px;
+    margin-bottom: 20px;
   }
     
     

@@ -89,7 +89,6 @@
   border: 1px solid #8fb055;
   box-shadow: 0 1.5px 2px rgba(255,255,255,0.3) inset;
   border-radius: 5px;
-  padding-left: 40px;
   padding: 10px 0;
   margin: 0 auto;
   margin-top: 10px;
@@ -105,8 +104,12 @@
 }
 
 @media (max-width: 1000px) {
+  .call-master {
+    padding: 20px 25px;
+  }
   .call-master__title {
-    font-size: 22px;
+    font-size: 21px;
+    line-height: 25px;
     margin-bottom: 20px;
   }
   .call-master__input {
@@ -116,15 +119,24 @@
 
 @media (max-width: 850px) {
   .call-master {
-    padding: 20px 25px;
+    padding: 15px 20px;
+  }
+  
+  .call-master__input {
+    margin-bottom: 8px;
   }
   
   .call-master__title {
-    font-size: 20px;
+    font-size: 19px;
+    line-height: 23px;
     margin-bottom: 15px;
   }
   .call-master__errorMsg {
     font-size: 13px;
+  }
+  .call-master__btn {
+    font-size: 15px;
+    margin-top: 8px;
   }
   
 }

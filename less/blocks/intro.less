@@ -1,8 +1,6 @@
 .intro {
   background-color: @beige-bg;
   background-image: url('../img/intro-bg.jpg');
-  /*filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/intro-bg.jpg', sizingMethod='scale');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/intro-bg.jpg', sizingMethod='scale')";*/
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -74,6 +72,7 @@
 @media (max-width: 1000px) {
   .intro {
     background-image: url('../img/intro-bg-md.jpg');
+    padding: 30px 0;
   }
   .intro__title {
     font-size: 32px;
@@ -82,12 +81,14 @@
   .intro__form {
     width: 255px;
   }
+  
 }
 
 @media (max-width: 850px) {
   
   .intro {
     background-image: url('../img/intro-bg-sm.jpg');
+    padding: 20px 0;
   }
   
   .intro__title {
@@ -103,6 +104,6 @@
     }
   }
   .intro__form {
-    width: 250px;
+    width: 235px;
   }
 }
