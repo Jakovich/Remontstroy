@@ -1,9 +1,9 @@
 .advantages {
   background-color: #f0eade;
   background-image: url('../img/adv-bg.jpg');
-  background-position: bottom center;
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/price-bg.jpg', sizingMethod='scale');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/price-bg.jpg', sizingMethod='scale')";
+  background-position: top center;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/adv-bg.jpg' sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/adv-bg.jpg', sizingMethod='scale')";
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -194,6 +194,9 @@
 }
 
 @media (max-width: 900px) {
+  .advantages {
+    background-image: url('../img/adv-bg-sm.jpg');
+  }
   .advantages__item { 
     padding-top: 68px;
     margin-bottom: 20px;
