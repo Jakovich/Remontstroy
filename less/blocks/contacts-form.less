@@ -1,0 +1,116 @@
+
+
+.contacts-form__title {
+  text-align: center;
+  color: @burgundy;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.contacts-form__explic {
+  font-size: 19px;
+  margin-top: 0;
+  text-align: center;
+  color: @brown;
+  margin-bottom: 15px;
+}
+
+
+.contacts-form__input {
+  display: block;
+  padding: 5px 5px;
+  margin-top: 5px;
+  width: 30%;
+  font-size: 14px;
+  font-style: italic;
+  color: #d69346;
+}
+
+.contacts-form__input--invalid {
+  outline: 1px solid red;
+  color: red;
+}
+
+.contacts-form__name-wrapper {
+ 
+  margin-bottom: 10px;
+}
+.contacts-form__phone-wrapper {
+ 
+  margin-bottom: 10px;
+}
+
+label[for=contacts-message] {
+  display: block;
+  clear: both;
+}
+
+.contacts-form__message {
+  width: 100%;
+  padding: 5px 5px;
+  margin-top: 5px;
+  font-size: 14px;
+  font-style: italic;
+  color: #d69346;
+}
+
+.contacts-form__btn {
+  display: block;
+  margin: 0 auto;
+  background-color: #d7c5ad;
+  background: linear-gradient(to top, #d9c3a9, #f0eeed);
+  cursor: pointer;
+  padding: 12px 30px;
+  width: 213px;
+  color: @burgundy;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 35px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+  
+  &:hover {
+    background-color: #ddba92;
+    background: linear-gradient(to top, #ddba92, #ece3d5);
+  }
+}
+
+.contacts-form__bottom {
+  text-align: center;
+  color: @brown;
+  font-style: italic;
+  font-size: 18px;
+  margin-top: 15px;
+  span {
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+}
+
+.contacts-form {
+  label {
+    color: @burgundy;
+    font-size: 13px;
+    position: relative;
+  }
+}
+
+.contacts-form__error {
+  position: absolute;
+  content: '';
+  width: @icon-error-width;
+  height: @icon-error-height;
+  background-image: url('../img/index-sprite.png');
+  background-position: @icon-error-offset-x @icon-error-offset-y;
+  left: -37px;
+  top: 20px;
+}
+
+
+
+

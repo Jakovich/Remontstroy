@@ -34,7 +34,7 @@
       <div class="page-header__wrapper">
         <div class="page-header__logo">
 
-          <a href="index.html">
+          <a href="#">
             <picture>
               <source media="(max-width:900px)" srcset="img/logo_sm.png">
               <source media="(max-width:1100px)" srcset="img/logo_md.png">
@@ -63,8 +63,8 @@
             <li class="main-nav__item"><a href="about.html">Кто мы</a></li>
             <li class="main-nav__item"><a href="portfolio.html">Наши работы</a></li>
             <li class="main-nav__item"><a href="prices.html">Наши цены</a></li>
-            <li class="main-nav__item main-nav__item--active"><a href="#">Отзывы</a></li>
-            <li class="main-nav__item"><a href="contacts.html">Контакты</a></li>
+            <li class="main-nav__item"><a href="reviews.html">Отзывы</a></li>
+            <li class="main-nav__item main-nav__item--active"><a href="#">Контакты</a></li>
           </ul>
         </nav>
       </div>
@@ -72,52 +72,38 @@
   </header>
 
   <main>
-
-    <section class="reviews">
-      <div class="reviews__wrapper">
-        <h2 class="reviews__title">Наши благодарные <b>заказчики</b></h2>
-        <div class="reviews__text">
-          <p>Здесь Вы можете увидеть малую часть отзывов и благодарностей от наших заказчиков, которые мы получали все эти годы:</p>
-        </div>
-        <div class="reviews__images">
-          <div class="reviews__image">
-            <img src="img/1.jpg" alt="" width="200" height="275">
-            <div class="reviews__name">Виктор и Елена Макаренко<br>14 сентября 2014 года</div>
+    <section class="contacts">
+      <div class="contacts__wrapper">
+        <h2 class="contacts__title">Контакты</h2>
+        <div class="contacts__content">
+          <div class="contacts__float">
+            <div class="contacts__left">
+              <p>Мы не знаем, <b>захотите ли Вы прочитать этот текст</b>, ведь Вы уже столько раз пытались читать никому не нужные рекламные тексты на сайтах, а мы могли бы поступить также как и все остальные наши коллеги по цеху, просто заказать и написать здесь кучу хвалебных речей о нашей компании, но скорее всего, что Вы уже видели это сотни раз подряд.</p>
+              <div class="contacts__map">
+                <img src="img/map.jpg" alt="">
+              </div>
+            </div>
           </div>
-          <div class="reviews__image">
-            <img src="img/2.jpg" alt="" width="200" height="275">
-            <div class="reviews__name">Петрова Н.И.<br>5 января 2015 года</div>
-          </div>
-          <div class="reviews__image reviews__image--third">
-            <img src="img/3.jpg" alt="" width="200" height="275">
-            <div class="reviews__name">Кузнецова Ю.А.<br>15 ноября 2014 года</div>
-          </div>
-          <div class="reviews__image reviews__image--forth">
-            <img src="img/4.jpg" alt="" width="200" height="275">
-            <div class="reviews__name">Богомолов Н.С.<br>16 февраля 2015 года</div>
-          </div>
-          <div class="reviews__image">
-            <img src="img/5.jpg" alt="" width="200" height="275">
-            <div class="reviews__name">Буяновский Д.В.<br>14 декабря 2014 года</div>
-          </div>
-          <div class="reviews__image reviews__image--third">
-            <img src="img/6.jpg" alt="" width="200" height="275">
-            <div class="reviews__name">Никитенко А.Б.<br>14 августа 2011 года</div>
-          </div>
-          <div class="reviews__image">
-            <img src="img/7.jpg" alt="" width="200" height="275">
-            <div class="reviews__name">Алексеева О.Л.<br>30 ноября 2014 года</div>
-          </div>
-          <div class="reviews__image reviews__image--forth">
-            <img src="img/9.jpg" alt="" width="200" height="275">
-            <div class="reviews__name">Константинова И.В.</div>
-          </div>
-          <div class="reviews__image reviews__image--third">
-            <img src="img/8.jpg" alt="" width="200" height="275">
-            <div class="reviews__name">ООО "Флорит"</div>
+          <div class="contacts__float">
+            <div class="contacts__right">
+              <form method="POST" action="report.php" class="contacts-form">
+                <legend class="contacts-form__title">Связаться с нами</legend>
+                <div class="contacts-form__name-wrapper">
+                  <label for="contacts-name">Имя:</label>
+                  <input class="contacts-form__input" type="text" name="name" id="contacts-name" placeholder="Введите свое имя">
+                </div>
+                <div class="contacts-form__phone-wrapper">
+                  <label for="contacts-phone">Телефон:</label>
+                  <input class="contacts-form__input" type="text" name="phone" id="contacts-phone" placeholder="Ваш номер телефона">
+                </div>
+                <label for="contacts-message">Текст сообщения:</label>
+                <textarea class="contacts-form__message" name="message_order" id="contacts-message" cols="30" rows="10" placeholder="Напишите здесь текст сообщения"></textarea>
+                <button class="contacts-form__btn" type="submit">Отправить</button>
+              </form>
+            </div>
           </div>
         </div>
-        <div class="reviews__contacts">
+        <div class="contacts__bottom">
           Есть вопросы? Звоните нам: <span>(495) <b>374-5010</b></span>
         </div>
       </div>
@@ -132,8 +118,8 @@
             <li class="main-nav__item"><a href="about.html">Кто мы</a></li>
             <li class="main-nav__item"><a href="portfolio.html">Наши работы</a></li>
             <li class="main-nav__item"><a href="prices.html">Наши цены</a></li>
-            <li class="main-nav__item"><a href="#">Отзывы</a></li>
-            <li class="main-nav__item"><a href="contacts.html">Контакты</a></li>
+            <li class="main-nav__item"><a href="reviews.html">Отзывы</a></li>
+            <li class="main-nav__item"><a href="#">Контакты</a></li>
           </ul>
         </nav>
       </div>
