@@ -17,6 +17,9 @@
   margin-bottom: 15px;
 }
 
+.contacts-form__input--invalid {
+  outline: 1px solid red;
+}
 
 .contacts-form__input {
   display: block;
@@ -26,6 +29,7 @@
   font-size: 14px;
   font-style: italic;
   color: #d69346;
+  position: relative;
 }
 
 .contacts-form__input--invalid {
@@ -97,19 +101,23 @@ label[for=contacts-message] {
     color: @burgundy;
     font-size: 13px;
     position: relative;
+    display: block;
+    
   }
 }
 
-.contacts-form__error {
+.contacts-form__errorMsg {
   position: absolute;
-  content: '';
-  width: @icon-error-width;
-  height: @icon-error-height;
-  background-image: url('../img/index-sprite.png');
-  background-position: @icon-error-offset-x @icon-error-offset-y;
-  left: -37px;
-  top: 20px;
+  color: red;
+  background-color: #ffffff;
+  left: 35%;
+  padding: 4px;
+  font-size: 13px;
+  top: 24px;
+  z-index:5;
 }
+
+
 
 
 
