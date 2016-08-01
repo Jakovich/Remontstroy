@@ -24,6 +24,9 @@
 }
 .contacts__map {
   width: 80%;
+  min-height: 300px;
+  background-image: url('../img/map.jpg');
+  background-size: contain;
 }
 .contacts__left {
   padding-right: 30px;
@@ -36,6 +39,7 @@
 }
 .contacts__right {
   padding-left: 30px;
+  padding-right: 20px;
 }
 .contacts__bottom {
   padding-top: 40px;
@@ -54,5 +58,14 @@
 @media (max-width: 960px) {
   .contacts__title {
     font-size: 37px;
+  }
+  .contacts__map {
+    width: 95%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .contacts__map {
+    width: 95%;
   }
 }

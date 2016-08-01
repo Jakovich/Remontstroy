@@ -1,5 +1,3 @@
-
-
 .contacts-form__title {
   text-align: center;
   color: @burgundy;
@@ -25,7 +23,7 @@
   display: block;
   padding: 5px 5px;
   margin-top: 5px;
-  width: 30%;
+  width: 170px;
   font-size: 14px;
   font-style: italic;
   color: #d69346;
@@ -110,11 +108,20 @@ label[for=contacts-message] {
   position: absolute;
   color: red;
   background-color: #ffffff;
-  left: 35%;
+  left: 190px;
   padding: 4px;
   font-size: 13px;
   top: 24px;
   z-index:5;
+}
+
+@media (max-width: 1000px) {
+  .contacts-form__input {
+    width: 150px;
+  }
+  .contacts-form__errorMsg {
+    left: 160px;
+  }
 }
 
 

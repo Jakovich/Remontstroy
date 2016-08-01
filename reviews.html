@@ -81,39 +81,46 @@
         </div>
         <div class="reviews__images">
           <div class="reviews__image">
-            <img src="img/1.jpg" alt="" width="200" height="275">
-            <div class="reviews__name">Виктор и Елена Макаренко<br>14 сентября 2014 года</div>
+            <a href="img/feedback-bg-1.jpg"><img src="img/feedback-sm-1.jpg" alt="" width="250" height="344"></a>
+            <div class="reviews__name">Виктор и Елена Макаренко
+              <br>14 сентября 2014 года</div>
           </div>
           <div class="reviews__image">
-            <img src="img/2.jpg" alt="" width="200" height="275">
-            <div class="reviews__name">Петрова Н.И.<br>5 января 2015 года</div>
+            <a href="img/feedback-bg-2.jpg"><img src="img/feedback-sm-2.jpg" alt="" width="250" height="344"></a>
+            <div class="reviews__name">Петрова Н.И.
+              <br>5 января 2015 года</div>
           </div>
           <div class="reviews__image reviews__image--third">
-            <img src="img/3.jpg" alt="" width="200" height="275">
-            <div class="reviews__name">Кузнецова Ю.А.<br>15 ноября 2014 года</div>
+            <a href="img/feedback-bg-3.jpg"><img src="img/feedback-sm-3.jpg" alt="" width="250" height="344"></a>
+            <div class="reviews__name">Кузнецова Ю.А.
+              <br>15 ноября 2014 года</div>
           </div>
           <div class="reviews__image reviews__image--forth">
-            <img src="img/4.jpg" alt="" width="200" height="275">
-            <div class="reviews__name">Богомолов Н.С.<br>16 февраля 2015 года</div>
+            <a href="img/feedback-bg-4.jpg"><img src="img/feedback-sm-4.jpg" alt="" width="250" height="344"></a>
+            <div class="reviews__name">Богомолов Н.С.
+              <br>16 февраля 2015 года</div>
           </div>
           <div class="reviews__image">
-            <img src="img/5.jpg" alt="" width="200" height="275">
-            <div class="reviews__name">Буяновский Д.В.<br>14 декабря 2014 года</div>
+            <a href="img/feedback-bg-5.jpg"><img src="img/feedback-sm-5.jpg" alt="" width="250" height="344"></a>
+            <div class="reviews__name">Буяновский Д.В.
+              <br>14 декабря 2014 года</div>
           </div>
           <div class="reviews__image reviews__image--third">
-            <img src="img/6.jpg" alt="" width="200" height="275">
-            <div class="reviews__name">Никитенко А.Б.<br>14 августа 2011 года</div>
+            <a href="img/feedback-bg-6.jpg"><img src="img/feedback-sm-6.jpg" alt="" width="250" height="344"></a>
+            <div class="reviews__name">Никитенко А.Б.
+              <br>14 августа 2011 года</div>
           </div>
           <div class="reviews__image">
-            <img src="img/7.jpg" alt="" width="200" height="275">
-            <div class="reviews__name">Алексеева О.Л.<br>30 ноября 2014 года</div>
+            <a href="img/feedback-bg-7.jpg"><img src="img/feedback-sm-7.jpg" alt="" width="250" height="344"></a>
+            <div class="reviews__name">Алексеева О.Л.
+              <br>30 ноября 2014 года</div>
           </div>
           <div class="reviews__image reviews__image--forth">
-            <img src="img/9.jpg" alt="" width="200" height="275">
+            <a href="img/feedback-bg-9.jpg"><img src="img/feedback-sm-9.jpg" alt="" width="250" height="344"></a>
             <div class="reviews__name">Константинова И.В.</div>
           </div>
           <div class="reviews__image reviews__image--third">
-            <img src="img/8.jpg" alt="" width="200" height="275">
+            <a href="img/feedback-bg-8.jpg"><img src="img/feedback-sm-8.jpg" alt="" width="250" height="344"></a>
             <div class="reviews__name">ООО "Флорит"</div>
           </div>
         </div>
@@ -183,7 +190,21 @@
 
   <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
   <script src="js/vendor/lib.min.js"></script>
+  <script src="js/vendor/jquery.colorbox-min.js"></script>
   <script src="js/main.min.js"></script>
+  <script>
+    "use strict";
+    $(document).ready(function(e) {
+      $('.reviews__images').find('a').colorbox({
+        'rel': 'gallery',
+        'maxWidth': '90%',
+        'transition': 'fade',
+        
+        'current': 'отзыв {current} из {total}'
+      });
+    });
+
+  </script>
 </body>
 
 </html>

@@ -91,6 +91,9 @@ gulp.task("copyHtml", function() {
   gulp.src("js/vendor/html5shiv.min.js")
   .pipe(copy())
   .pipe(gulp.dest("build/js/vendor"))
+  gulp.src("js/vendor/jquery.colorbox-min.js")
+  .pipe(copy())
+  .pipe(gulp.dest("build/js/vendor"))
 });
 
 gulp.task("copyJslib", function() {
