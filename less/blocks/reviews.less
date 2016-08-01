@@ -1,5 +1,5 @@
 .reviews {
-  background-color: @bg-reasons; 
+  background-color: #f7f1d9; 
 }
 
 .reviews__wrapper {
@@ -35,8 +35,25 @@
   margin-right: 5.2%;
   margin-bottom: 40px;
   width: 21%;
-  position: relative;
   
+  
+  a {
+    display: block;
+    position: relative;
+    &:before {
+      position: absolute;
+      content: '';
+      width: 24px;
+      height: 24px;
+      background-image: url('../img/plus.png');
+      left: 50%;
+      margin-left: -12px;
+      top: 45%;
+    }
+  }
+  a:hover {
+    filter: blur(3px);
+  }
   
   img {
     width: 100%;
@@ -44,16 +61,7 @@
   &:nth-child(4n) {
     margin-right: 0;
   }
-  &:before {
-    position: absolute;
-    content: '';
-    width: 24px;
-    height: 24px;
-    background-image: url('../img/plus.png');
-    left: 50%;
-    margin-left: -12px;
-    top: 40%;
-  }
+  
 }
 
 .reviews__name {
