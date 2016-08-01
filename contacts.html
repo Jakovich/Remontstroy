@@ -101,7 +101,7 @@
           <div class="contacts__float">
             <div class="contacts__right">
               <form method="POST" action="report.php" class="contacts-form">
-                <legend class="contacts-form__title">Связаться с нами</legend>
+                <h4 class="contacts-form__title">Связаться с нами</h4>
                 <div class="contacts-form__name-wrapper">
                   <label for="contacts-name">Имя:</label>
                   <input class="contacts-form__input" type="text" name="name" id="contacts-name" placeholder="Введите свое имя">
@@ -192,18 +192,35 @@
 
     function init() {
       myMap = new ymaps.Map("yandex-map", {
-        center: [55.78726978, 37.63581750],
-        zoom: 13,
+        center: [55.78727, 37.635817],
+        zoom: 12,
         controls: ["zoomControl", "fullscreenControl"]
       });
+      
+      myPlacemark = new ymaps.Placemark(
+        [55.78727, 37.635817], 
+        {
+          name: 'OOO "Ремонтстрой"',
+          description: 'Адрес: г. Москва, Проспект Мира, д. 68, строение 3, офис 10Б',
+          
+          balloonContent: '<b>Компания:</b> ООО "Ремонтстрой"<br> <b>Адрес:</b> г. Москва, Проспект Мира, д. 68,<br>строение 3, офис 10Б',
+          iconCaption: 'OOO "Ремонтстрой"'
+        }
+        ,
+        {
+          preset:'islands#redDotIconWithCaption',
+          balloonPanelMaxMapArea: 0,
+          closeButton: true
+        }
+        
+      );
+      
+      myMap.geoObjects.add(myPlacemark);
+    
     }
     
-    myPlacemark = new ymaps.Placemark([55.75399400, 37.62209300], {
-      hintContent: 'Москва!',
-      balloonContent: 'Столица России'
-    });
+   
     
-    myMap.geoObjects.add(myPlacemark);
 
   </script>
 </body>
