@@ -385,6 +385,17 @@ $(document).ready(function(e) {
 		}
 	});
   
+  $(document).mouseup(function (e){ // событие клика по веб-документу
+		var callMaster = $(".contacts-form"); // тут указываем ID элемента
+		if (!callMaster.is(e.target) // если клик был не по нашему блоку
+		    && callMaster.has(e.target).length === 0) { // и не по его дочерним элементам
+			removeErr('contacts-name', 'contacts-form__errorMsg');
+            removeErr('contacts-phone', 'contacts-form__errorMsg');
+            $('#contacts-name').removeClass('contacts-form__input--invalid');
+            $('#contacts-phone').removeClass('contacts-form__input--invalid');
+		}
+	});
+  
   
 });
 
