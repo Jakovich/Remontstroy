@@ -327,7 +327,16 @@ $(document).ready(function (e) {
     }
   });
   
-
+  /**
+  закрытие попапа при отправке формы
+  */
+  
+  $('.popup-report__form').submit(function(){
+    $('.popup-report, .popup-report__overlay').fadeOut(500);
+    if ($('.popup-report').hasClass('popup-report__shake')) {
+      $('.popup-report').removeClass('popup-report__shake');
+    }
+  })
   /**
     функция показа сообщения об ошибки
   * @param {HTMLElement} field
@@ -365,7 +374,7 @@ $(document).ready(function (e) {
 
  
   /**
-     функция удаления класса с ошибкой и сообщения об ошибки
+     функция удаления класса с ошибкой и сообщения об ошибки при клике вне формы
    * @param {HTMLElement} form
    * @param {string} name
    * @param {string} phone
