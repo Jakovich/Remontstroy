@@ -94,11 +94,35 @@
 }
 .portfolio__bottom {
   margin-bottom: 55px;
+  margin-top: 25px;
   span {
     font-size: 34px;
     color: @burgundy;
     display: inline-block;
     vertical-align: bottom;
+  }
+}
+.portfolio__more {
+  display: block;
+  margin: 0 auto;
+  background-color: #d7c5ad;
+  background: linear-gradient(to top, #d9c3a9, #f0eeed);
+  cursor: pointer;
+  padding: 12px 30px;
+  width: 213px;
+  color: @burgundy;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 35px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+  
+  &:hover {
+    background-color: #ddba92;
+    background: linear-gradient(to top, #ddba92, #ece3d5);
   }
 }
 @media (max-width: 940px) {

@@ -1,63 +1,48 @@
-$(document).ready(function(){
+$(document).ready(function () {
   var portfolioItem = $(".portfolio__item");
-var linkMore = $(".portfolio__more");
-var PAGE_SIZE = 1;
-var pageNumber = 0;
+  var linkMore = $(".portfolio__more");
+  var PAGE_SIZE = 3;
+  var pageNumber = 0;
 
-var portfolioItemInabled = [];
-console.log(portfolioItemInabled);
-for (var i = 0; i < portfolioItem.length; i++) {
-  if (portfolioItem[i].style.display === "none") {
-    portfolioItemInabled.push(portfolioItem[i]);
-  }
-}
+  var portfolioItemInabled = [];
 
-
-
-function showMore() {
-  linkMore.click(function (event) {
-    event.preventDefault();
-    
-    renderReviews(portfolioItemInabled, pageNumber, this);
-    pageNumber++;
-  });
-  console.log(portfolioItemInabled);
-}
-
-function renderReviews(arr, page, link) {
-
-  var from = page * PAGE_SIZE;
-
-  var to = from + PAGE_SIZE;
-  
-  var arrResult = arr.slice(from, to);
-  
-  for (var i = 0; i < arrResult.length; i++) {
-    
-    arrResult[i].style.display = "block";
-    var photos = arrResult[i].querySelectorAll("img");
-    for (var i = 0; i < photos.length; i++) {
-      var atr = photos[i].getAttribute("data-src");
-      photos[i].setAttribute("src", atr);
+  for (var i = 0; i < portfolioItem.length; i++) {
+    if (portfolioItem[i].style.display === "none") {
+      portfolioItemInabled.push(portfolioItem[i]);
     }
   }
 
-  /*arr.slice(from, to).forEach(function (items) {
-    items.style.display = "block";
-    var photos = items.querySelectorAll("img");
-    for (var i = 0; i < photos.length; i++) {
-      var atr = photos[i].getAttribute("data-src");
-      photos[i].setAttribute("src", atr);
-    }
-  });*/
-
-  if (page === (arr.length - 1)) {
-    link.style.display = "none";
+  function showMore() {
+    linkMore.click(function (event) {
+      event.preventDefault();
+      renderPhotos(portfolioItemInabled, pageNumber, this);
+      pageNumber++;
+    });
   }
 
-}
+  function renderPhotos(arr, page, link) {
 
-showMore();
+    var from = page * PAGE_SIZE;
+
+    var to = from + PAGE_SIZE;
+
+    var arrResult = arr.slice(from, to);
+    console.log(arrResult);
+
+    for (var j = 0; j < arrResult.length; j++) {
+      arrResult[j].style.display = "block";
+      var photos = arrResult[j].querySelectorAll("img");
+      for (var i = 0; i < photos.length; i++) {
+        var atr = photos[i].getAttribute("data-src");
+        photos[i].setAttribute("src", atr);
+      }
+    }
+
+    if (!(page < Math.floor((arr.length - 1) / PAGE_SIZE))) {
+      link.style.display = "none";
+    }
+
+  }
+
+  showMore();
 })
-
-
