@@ -50,7 +50,7 @@ gulp.task("style", function(){
 });
 
 gulp.task("minjs", function(){
-  gulp.src("js/*.js")
+  gulp.src("js/main.js")
   .pipe(gulp.dest("build/js/"))
   .pipe(uglify())
   .pipe(rename("main.min.js"))
@@ -94,6 +94,9 @@ gulp.task("copyHtml", function() {
   gulp.src("js/vendor/jquery.colorbox-min.js")
   .pipe(copy())
   .pipe(gulp.dest("build/js/vendor"))
+  gulp.src("js/portfolio.js")
+  .pipe(copy())
+  .pipe(gulp.dest("build/js"))
 });
 
 gulp.task("copyJslib", function() {
@@ -117,7 +120,8 @@ gulp.task("show", function(){
   
   gulp.watch("less/**/*.less", ["style"]).on("change", server.reload);
   gulp.watch("*.html", ["copyHtml"]).on("change", server.reload);
-  gulp.watch("js/*.js", ["minjs"]).on("change", server.reload);
+  gulp.watch("js/main.js", ["minjs"]).on("change", server.reload);
+  gulp.watch("js/portfolio.js", ["copyHtml"]).on("change", server.reload);
   gulp.watch("img/*", ["image"]).on("change", server.reload);
 });
 

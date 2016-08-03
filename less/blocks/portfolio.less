@@ -9,7 +9,6 @@
   margin: 0 auto;
   padding: 0 15px;
 }
-
 .portfolio__title {
   margin-top: 30px;
   text-align: center;
@@ -25,9 +24,8 @@
     width: 30.5%;
     top: 25px;
     height: 3px;
-    border-bottom: 2px dashed @burgundy; 
+    border-bottom: 2px dashed @burgundy;
   }
-  
   &:after {
     content: '';
     position: absolute;
@@ -35,10 +33,9 @@
     width: 30.5%;
     top: 25px;
     height: 3px;
-    border-bottom: 2px dashed @burgundy; 
+    border-bottom: 2px dashed @burgundy;
   }
 }
-
 .portfolio__link {
   text-align: center;
   display: inline-block;
@@ -48,22 +45,53 @@
   font-weight: bold;
   background-color: #e9ae4f;
   background: linear-gradient(to top, #e9ae4f, #fab952);
-  box-shadow: 0 1.5px 2px rgba(255,255,255,0.3) inset;
+  box-shadow: 0 1.5px 2px rgba(255, 255, 255, 0.3) inset;
   margin: 0 20px;
   color: #ffffff;
   border-radius: 7px;
   text-decoration: none;
   border: 1px solid #c99f5c;
   margin-top: 23px;
-  
   padding: 12px;
   &:hover {
     background-color: @bg-btn;
     background: linear-gradient(to top, #d59e47, #e5a94b);
-    
   }
 }
-
+.portfolio__item {
+  .clearfix();
+  text-align: left;
+  font-size: 0;
+  margin-bottom: 24px;
+}
+.portfolio__left-images {
+  float: left;
+  width: 49%;
+}
+.portfolio__explic {
+  font-size: 16px;
+  color: @burgundy;
+  text-align: left;
+  margin-top: 12px;
+}
+.portfolio__img-sm {
+  display: inline-block;
+  margin-left: 4%;
+  width: 48%;
+  &:first-child {
+    margin-left: 0;
+  }
+  img {
+    width: 269px;
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid #f5eee3;
+  }
+}
+.portfolio__right-images {
+  float: right;
+  width: 49%;
+}
 .portfolio__bottom {
   margin-bottom: 55px;
   span {
@@ -73,34 +101,50 @@
     vertical-align: bottom;
   }
 }
-
-@media (max-width: 960px) {
- 
+@media (max-width: 940px) {
+  .portfolio__left-images {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+  .portfolio__img-sm {
+    margin-left: 0;
+    text-align: left;
+    &:first-child {
+      margin-left: 0;
+      text-align: right;
+      margin-right: 4%;
+    }
+  }
+  .portfolio__right-images {
+    margin-top: 30px;
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
   
+  .portfolio__explic {
+    width: 578px;
+    margin: 0 auto;
+  }
   .portfolio__title {
     font-size: 45px;
     &:before {
       width: 27%
     }
-      &:after {
+    &:after {
       width: 27%
     }
   }
-  
-  
   .portfolio__bottom {
-  
-  span {
-    font-size: 31px;
-    color: @burgundy;
-    display: inline-block;
-    vertical-align: bottom;
+    span {
+      font-size: 31px;
+      color: @burgundy;
+      display: inline-block;
+      vertical-align: bottom;
+    }
   }
-}
-  
   .portfolio__link {
     width: 180px;
   }
-    
-    
 }
