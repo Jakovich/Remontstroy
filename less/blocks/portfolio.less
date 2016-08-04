@@ -78,6 +78,20 @@
   display: inline-block;
   margin-left: 4%;
   width: 48%;
+  position: relative;
+    &:before {
+      position: absolute;
+      content: '';
+      right: 4%;
+      bottom: 4%;
+      background-image: url('../img/index-sprite.png');
+      background-position: @icon-loupe-offset-x @icon-loupe-offset-y;
+      width: @icon-loupe-width;
+      height: @icon-loupe-height;
+      z-index: 10;
+    }
+  
+ 
   &:first-child {
     margin-left: 0;
   }
@@ -86,7 +100,8 @@
     height: auto;
     border-radius: 10px;
     border: 3px solid #f5eee3;
-  }
+    
+}
 }
 .portfolio__right-images {
   float: right;
@@ -134,7 +149,16 @@
   .portfolio__img-sm {
     margin-left: 0;
     text-align: left;
+    &:before {
+      left: 225px;
+      bottom: 4%;
+    }
     &:first-child {
+      &:before {
+        left: auto;
+        right: 30px;
+        bottom: 4%;
+      }
       margin-left: 0;
       text-align: right;
       margin-right: 4%;
