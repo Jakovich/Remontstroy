@@ -5,6 +5,23 @@ $(document).ready(function () {
   var pageNumber = 0;
 
   var portfolioItemInabled = [];
+  
+  //добавление title к картинкам до/после
+  
+  function addTitle() {
+    var explic = document.querySelectorAll(".portfolio__right-images");
+    console.log(explic);
+    for (var i = 0; i < explic.length; i++) {
+      var currentExplic = explic[i].querySelector('.portfolio__explic');
+      
+      var currentTitle = 'ДО и ПОСЛЕ: ' + currentExplic.innerText;
+      var currentLink = explic[i].querySelector('a');
+      currentLink.setAttribute('title', currentTitle); 
+    }
+    
+  }
+  
+  addTitle();
 
   for (var i = 0; i < portfolioItem.length; i++) {
     if (portfolioItem[i].style.display === "none") {
@@ -19,6 +36,7 @@ $(document).ready(function () {
       pageNumber++;
     });
   }
+  
 
   function renderPhotos(arr, page, link) {
 
