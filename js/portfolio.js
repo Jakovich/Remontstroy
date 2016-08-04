@@ -41,8 +41,24 @@ $(document).ready(function () {
     if (!(page < Math.floor((arr.length - 1) / PAGE_SIZE))) {
       link.style.display = "none";
     }
+    
+    showColorbox(); 
 
   }
 
   showMore();
+  
+  
+   function showColorbox() {
+     var $portfolioItems =  $(".portfolio__item:visible");
+     
+     $portfolioItems.find('a').colorbox({
+        'rel': 'gallery',
+        'maxWidth': '90%',
+        'transition': 'fade',
+        'current': '{current} of {total}'
+      });
+   }
+   showColorbox(); 
+
 })
