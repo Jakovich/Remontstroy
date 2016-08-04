@@ -1,29 +1,25 @@
 .reviews {
-  background-color: #f7f1d9; 
+  background-color: #f7f1d9;
 }
-
 .reviews__wrapper {
   max-width: 1180px;
   min-width: 720px;
   margin: 0 auto;
   padding: 5px 15px;
 }
-
 .reviews__title {
   font-size: 40px;
   text-align: left;
   font-weight: normal;
   color: @burgundy;
 }
-
 .reviews__text {
   padding-top: 20px;
   font-size: 16px;
   color: @burgundy;
   border-top: 2px dashed @burgundy;
-  margin-bottom: 0; 
+  margin-bottom: 0;
 }
-
 .reviews__images {
   font-size: 0;
   border-bottom: 2px dashed @burgundy;
@@ -37,45 +33,42 @@
   width: 21%;
   font-size: 16px;
   vertical-align: top;
-  
   a {
     display: block;
     position: relative;
-    &:before {
-      position: absolute;
-      content: '';
-      width: 24px;
-      height: 24px;
-      background-image: url('../img/plus.png');
-      left: 50%;
-      margin-left: -12px;
-      top: 45%;
+    &:hover {
+      &:before {
+        position: absolute;
+        content: '';
+        width: 24px;
+        height: 24px;
+        background-image: url('../img/plus.png');
+        left: 50%;
+        margin-left: -12px;
+        top: 45%;
+        z-index: 5;
+      }
+      img {
+        filter: blur(3px);
+      }
     }
   }
-  a:hover {
-    filter: blur(3px);
-  }
-  
   img {
     width: 100%;
   }
   &:nth-child(4n) {
     margin-right: 0;
   }
-  
 }
-
 .reviews__name {
   color: @burgundy;
   font-style: italic;
 }
-
 .reviews__contacts {
   text-align: center;
   font-size: 34px;
   color: @brown;
   margin-bottom: 50px;
-  
   span {
     font-style: italic;
   }
@@ -83,7 +76,6 @@
     color: @burgundy;
   }
 }
-
 @media (max-width: 1000px) {
   .reviews__title {
     font-size: 37px;
@@ -92,7 +84,7 @@
     width: 29%;
     margin-right: 6%;
     &:nth-child(4n) {
-    margin-right: 6%;
+      margin-right: 6%;
     }
     &:nth-child(3n) {
       margin-right: 0;
