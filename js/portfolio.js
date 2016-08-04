@@ -56,7 +56,7 @@ $(document).ready(function () {
       'rel': 'gallery',
       'maxWidth': '90%',
       'transition': 'fade',
-      'current': '{current} of {total}'
+      'current': ''
     });
   }
   showMore();

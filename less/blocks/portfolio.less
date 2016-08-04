@@ -9,6 +9,29 @@
   margin: 0 auto;
   padding: 0 15px;
 }
+.portfolio__text {
+  font-size: 30px;
+  font-style: italic;
+  position: absolute;
+  background-color: #000000;
+  opacity: 0.7;
+  padding: 10px 27px;
+  top: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+}
+.portfolio__text--before {
+  color: #ffffff;
+  left: 5%;
+}
+.portfolio__text--after {
+  color: #e1c78c;
+  padding: 10px 14px;
+  font-weight: bold;
+  left: 58%;
+}
+.portfolio__img-big {
+  position: relative;
+}
 .portfolio__title {
   margin-top: 30px;
   text-align: center;
@@ -79,19 +102,17 @@
   margin-left: 4%;
   width: 48%;
   position: relative;
-    &:before {
-      position: absolute;
-      content: '';
-      right: 4%;
-      bottom: 4%;
-      background-image: url('../img/index-sprite.png');
-      background-position: @icon-loupe-offset-x @icon-loupe-offset-y;
-      width: @icon-loupe-width;
-      height: @icon-loupe-height;
-      z-index: 10;
-    }
-  
- 
+  &:before {
+    position: absolute;
+    content: '';
+    right: 4%;
+    bottom: 4%;
+    background-image: url('../img/index-sprite.png');
+    background-position: @icon-loupe-offset-x @icon-loupe-offset-y;
+    width: @icon-loupe-width;
+    height: @icon-loupe-height;
+    z-index: 10;
+  }
   &:first-child {
     margin-left: 0;
   }
@@ -100,8 +121,13 @@
     height: auto;
     border-radius: 10px;
     border: 3px solid #f5eee3;
-    
+  }
 }
+.portfolio__img-big {
+  img {
+    border: 3px solid #f5eee3;
+    border-radius: 10px;
+  }
 }
 .portfolio__right-images {
   float: right;
@@ -133,11 +159,15 @@
   text-decoration: none;
   font-weight: bold;
   margin-top: 35px;
-  box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
-  
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
   &:hover {
     background-color: #ddba92;
     background: linear-gradient(to top, #ddba92, #ece3d5);
+  }
+}
+@media (max-width: 1150px) {
+  .portfolio__text {
+    font-size: 25px;
   }
 }
 @media (max-width: 940px) {
@@ -170,7 +200,6 @@
     width: 100%;
     text-align: center;
   }
-  
   .portfolio__explic {
     width: 578px;
     margin: 0 auto;
@@ -191,6 +220,13 @@
       display: inline-block;
       vertical-align: bottom;
     }
+  }
+  .portfolio__text {
+    font-size: 30px;
+  }
+  .portfolio__img-big {
+    width: 586px;
+    margin:0 auto;
   }
   .portfolio__link {
     width: 180px;
