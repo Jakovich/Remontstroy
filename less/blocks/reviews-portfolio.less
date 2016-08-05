@@ -54,18 +54,6 @@
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 15px;
-  /*position: relative;
-  &:before {
-    position: absolute;
-    content: '';
-    left: 95px;
-    top: 155px;
-    background-image: url('../img/index-sprite.png');
-    background-position: @icon-loupe-offset-x @icon-loupe-offset-y;
-    width: @icon-loupe-width;
-    height: @icon-loupe-height;
-    z-index: 10;
-  }*/
 }
 
 .reviews-portfolio__image {
@@ -76,9 +64,9 @@
   height: 200px;
   position: relative;
   a {
-    &:hover {
-      &:before {
-        position: absolute;
+    
+    &:before {
+      position: absolute;
         content: '';
         right: 5px;
         bottom: 5px;
@@ -87,11 +75,25 @@
         width: @icon-loupe-width;
         height: @icon-loupe-height;
         z-index: 10;
+        opacity: 0;
+        filter: alpha(opacity=20);
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+	     transition: all 0.3s ease;
+    }
+    &:hover {
+      &:before {
+       opacity: 1; 
       }
       img {
-    
-      filter: blur(3px);
-    }
+        -webkit-transition: 0.2s -webkit-filter linear;
+        -moz-transition: 0.2s -moz-filter linear;
+        -o-transition: 0.2s -o-filter linear;
+        transition: 0.2s filter linear;
+        filter: blur(3px);
+        filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='3')
+      }
     }
     
   }
