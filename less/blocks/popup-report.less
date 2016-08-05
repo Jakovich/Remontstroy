@@ -119,7 +119,14 @@ label[for=report-message] {
   display: block;
   margin: 0 auto;
   background-color: #d7c5ad;
-  background: linear-gradient(to top, #d9c3a9, #f0eeed);
+  background: linear-gradient(to top, #dcb383  0%,  #d9c3a9 50%, #d9c3a9 50%, #f0eeed 100%);
+  background-repeat: repeat;
+  background-size: 100% 88px;
+  background-position: 0 0;
+  -webkit-transition: all 0.3s linear;
+     -moz-transition: all 0.3s linear;
+       -o-transition: all 0.3s linear;
+          transition: all 0.3s linear;
   cursor: pointer;
   padding: 12px 30px;
   width: 213px;
@@ -134,7 +141,10 @@ label[for=report-message] {
   
   &:hover {
     background-color: #ddba92;
-    background: linear-gradient(to top, #ddba92, #ece3d5);
+    background: linear-gradient(to top, #dcb383  0%,  #d9c3a9 50%, #d9c3a9 50%, #f0eeed 100%);
+    background-repeat: repeat;
+    background-size: 100% 88px;
+    background-position: 0 -44px;
   }
 }
 

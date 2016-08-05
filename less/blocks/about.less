@@ -38,7 +38,14 @@
   text-transform: uppercase;
   font-weight: bold;
   background-color: #e9ae4f;
-  background: linear-gradient(to top, #e9ae4f, #fab952);
+  background: linear-gradient(to top, #d59e47 0%,  #e5a94b 50%, #e5a94b 50%, #fab952 100%);
+  background-repeat: repeat;
+  background-size: 100% 88px;
+  background-position: 0 0;
+  -webkit-transition: all 0.3s linear;
+     -moz-transition: all 0.3s linear;
+       -o-transition: all 0.3s linear;
+          transition: all 0.3s linear;
   box-shadow: 0 1.5px 2px rgba(255,255,255,0.3) inset;
   margin: 0 auto;
   color: #ffffff;
@@ -50,7 +57,10 @@
   padding: 12px;
   &:hover {
     background-color: @bg-btn;
-    background: linear-gradient(to top, #d59e47, #e5a94b);
+    background: linear-gradient(to top, #d59e47 0%,  #e5a94b 50%, #e5a94b 50%, #fab952 100%);
+    background-repeat: repeat;
+    background-size: 100% 88px;
+    background-position: 0 -44px;
     color: #ffffff;
   }
 }

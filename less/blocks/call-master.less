@@ -24,7 +24,10 @@
   padding-left: 40px;
   position: relative;
   border: 1px solid #d7c9b1;
- 
+ -webkit-transition: all 0.3s linear;
+     -moz-transition: all 0.3s linear;
+       -o-transition: all 0.3s linear;
+          transition: all 0.3s linear;
   &:focus {
     border: 1px solid @burgundy;
   }
@@ -78,7 +81,14 @@
 
 .call-master__btn {
   background-color: #84b72c;
-  background: linear-gradient(to top, #7bad29, #8fc42f);
+  background: linear-gradient(to top, #7bad29 0%, #8fc42f 50%, #8bc729 50%,  #9fda33 100%);
+  background-repeat: repeat;
+  background-size: 100% 80px;
+  background-position: 0 -40px;
+  -webkit-transition: all 0.3s linear;
+     -moz-transition: all 0.3s linear;
+       -o-transition: all 0.3s linear;
+          transition: all 0.3s linear;
   display: block;
   width: 100%;
   color: #ffffff;
@@ -93,13 +103,17 @@
   margin: 0 auto;
   margin-top: 10px;
   cursor: pointer;
-
+  -webkit-transition: all 1s ease;
+     -moz-transition:  all 1s ease;
+     -o-transition: all 1s ease;
+    transition: all 0.5s ease;
   
   &:hover {
     background-color: #9bc64e;
-    background: -webkit-linear-gradient(bottom, #8bc729, #9fda33);
-    background: -o-linear-gradient(bottom, #8bc729, #9fda33);
-    background: linear-gradient(to top, #8bc729, #9fda33);
+    background: linear-gradient(to top, #7bad29 0%, #8fc42f 50%, #8bc729 50%,  #9fda33 100%);
+    background-repeat: repeat;
+    background-size: 100% 80px;
+    background-position: 0 0;
   }
 }
 
