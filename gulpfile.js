@@ -50,7 +50,9 @@ gulp.task("style", function(){
 });
 
 gulp.task("minjs", function(){
+  
   gulp.src("js/main.js")
+  
   .pipe(gulp.dest("build/js/"))
   .pipe(uglify())
   .pipe(rename("main.min.js"))

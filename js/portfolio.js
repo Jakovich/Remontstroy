@@ -24,20 +24,27 @@ $(document).ready(function () {
   var portfolioItemInabled = [];
   
   /** 
-  функция добавление title к картинкам до/после
+  функция добавление title к ссылкам на картинки
   */
   
   function addTitle() {
-    var explic = document.querySelectorAll(".portfolio__right-images");
-    for (var i = 0; i < explic.length; i++) {
+    var portfolioItem = document.querySelectorAll(".portfolio__item");
+    for (var i = 0; i < portfolioItem.length; i++) {
       //берется значение подписи к картинке
-      var currentExplic = explic[i].querySelector('.portfolio__explic');
+      var currentExplic = portfolioItem[i].querySelector('.portfolio__explic');
+      var currentText = currentExplic.innerText;
       //добавляется фраза 'ДО и ПОСЛЕ'
-      var currentTitle = 'ДО и ПОСЛЕ: ' + currentExplic.innerText;
-      var currentLink = explic[i].querySelector('a');
+      var currentTitle = 'ДО и ПОСЛЕ: ' + currentText;
+      var currentImgBig = portfolioItem[i].querySelector('.portfolio__img-big');
+      var currenImgBigLink = currentImgBig.querySelector('a');
+      var currentImgSml = portfolioItem[i].querySelector('.portfolio__left-images');
+      var currentImgSmlLinks = currentImgSml.querySelectorAll('a');
+      for (var j = 0; j < currentImgSmlLinks.length; j++) {
+        currentImgSmlLinks[j].setAttribute('title', currentText)
+      }
       //вставляется в качестве значения атрибута ссылки, из которого colorbox 
       //берет название к слайду
-      currentLink.setAttribute('title', currentTitle); 
+      currenImgBigLink.setAttribute('title', currentTitle); 
     }
     
   }
@@ -75,6 +82,9 @@ $(document).ready(function () {
         var atr = photos[i].getAttribute("data-src");
         var img = new Image();
         img.src = atr;
+        var currentExplicItem = photos[i].parentNode.parentNode.parentNode;
+        var currentExplic = currentExplicItem.querySelector('.portfolio__explic').innerText;
+        img.setAttribute('alt', currentExplic);
         photos[i].insertBefore(img, photos[i].firstChild);
       }
     }
