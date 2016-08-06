@@ -123,9 +123,9 @@ gulp.task("copyHtml", function() {
   gulp.src("js/vendor/jquery.colorbox-min.js")
   .pipe(copy())
   .pipe(gulp.dest("build/js/vendor"))
-  gulp.src("js/portfolio.js")
+  gulp.src("fonts/*")
   .pipe(copy())
-  .pipe(gulp.dest("build/js"))
+  .pipe(gulp.dest("build/fonts/"))
 });
 
 gulp.task("copyJslib", function() {

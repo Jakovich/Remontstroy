@@ -29,7 +29,8 @@
   position:relative;
 }
 #cboxLoadedContent{
-  overflow:auto; -webkit-overflow-scrolling: touch;
+  overflow:auto; 
+  -webkit-overflow-scrolling: touch;
 }
 #cboxTitle{
   margin:0;
@@ -167,22 +168,6 @@
   text-indent:-9999px;
 }
 
-
-/*
-  The following fixes a problem where IE7 and IE8 replace a PNG's alpha transparency with a black fill
-  when an alpha filter (opacity change) is set on the element or ancestor element.  This style is not applied to or needed in IE9.
-  See: http://jacklmoore.com/notes/ie-transparency-problems/
-*/
-.cboxIE #cboxTopLeft,
-.cboxIE #cboxTopCenter,
-.cboxIE #cboxTopRight,
-.cboxIE #cboxBottomLeft,
-.cboxIE #cboxBottomCenter,
-.cboxIE #cboxBottomRight,
-.cboxIE #cboxMiddleLeft,
-.cboxIE #cboxMiddleRight {
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
-}
 
 #cboxTopLeft,
 #cboxTopCenter,
