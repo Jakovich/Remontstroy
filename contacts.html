@@ -181,45 +181,10 @@
       <br>тогда звоните +7(495) <span>374-5010</span></p>
   </div>
   <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
   <script src="js/vendor/lib.min.js"></script>
   <script src="js/main.min.js"></script>
-  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
-
-  <script type="text/javascript">
-    ymaps.ready(init);
-    var myMap,
-      myPlacemark;
-
-    function init() {
-      myMap = new ymaps.Map("yandex-map", {
-        center: [55.78727, 37.635817],
-        zoom: 12,
-        controls: ["zoomControl", "fullscreenControl"]
-      });
-      
-      myPlacemark = new ymaps.Placemark(
-        [55.78727, 37.635817], 
-        {
-          name: 'OOO "Ремонтстрой"',
-          description: 'Адрес: г. Москва, Проспект Мира, д. 68, строение 3, офис 10Б',
-          
-          balloonContent: '<b>Компания:</b> ООО "Ремонтстрой"<br> <b>Адрес:</b> г. Москва, Проспект Мира, д. 68,<br>строение 3, офис 10Б',
-          iconCaption: 'OOO "Ремонтстрой"'
-        }
-        ,
-        {
-          preset:'islands#redDotIconWithCaption',
-          balloonPanelMaxMapArea: 0,
-          closeButton: true
-        }
-        
-      );
-      
-      myMap.geoObjects.add(myPlacemark);
-    
-    }
-    
-  </script>
+  <script src="js/contacts.js"></script>
 </body>
 
 </html>

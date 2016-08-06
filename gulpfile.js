@@ -55,6 +55,26 @@ gulp.task("minjs", function(){
   .pipe(uglify())
   .pipe(rename("main.min.js"))
   .pipe(gulp.dest("build/js/"))
+  gulp.src("js/portfolio.js")
+  .pipe(gulp.dest("build/js/"))
+  .pipe(uglify())
+  .pipe(rename("portfolio.min.js"))
+  .pipe(gulp.dest("build/js/"))
+  gulp.src("js/index.js")
+  .pipe(gulp.dest("build/js/"))
+  .pipe(uglify())
+  .pipe(rename("index.min.js"))
+  .pipe(gulp.dest("build/js/"))
+  gulp.src("js/contacts.js")
+  .pipe(gulp.dest("build/js/"))
+  .pipe(uglify())
+  .pipe(rename("contacts.min.js"))
+  .pipe(gulp.dest("build/js/"))
+  gulp.src("js/reviews.js")
+  .pipe(gulp.dest("build/js/"))
+  .pipe(uglify())
+  .pipe(rename("reviews.min.js"))
+  .pipe(gulp.dest("build/js/"))
   
 });
 
@@ -129,8 +149,7 @@ gulp.task("show", function(){
   
   gulp.watch("less/**/*.less", ["style"]).on("change", server.reload);
   gulp.watch("*.html", ["copyHtml"]).on("change", server.reload);
-  gulp.watch("js/main.js", ["minjs"]).on("change", server.reload);
-  gulp.watch("js/portfolio.js", ["copyHtml"]).on("change", server.reload);
+  gulp.watch("js/*.js", ["minjs"]).on("change", server.reload);
   gulp.watch("img/*", ["image"]).on("change", server.reload);
 });
 

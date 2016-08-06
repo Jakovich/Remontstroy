@@ -1,29 +1,43 @@
-"use strict";
-$(document).ready(function (e) {
+/*
+----
+Общий скрипт для всех страниц
+----
+*/
 
-  //добавление в head ссылки на googleFonts
+"use strict";
+$(document).ready(function () {
+
+  /**
+    Добавление в head ссылки на googleFonts
+    --------------------------------------
+  */
   $("head").append("<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>");
 
   /**
    Открытие и закрытие попапа
+   ------------------------------
   */
-  //добавление блока для затемнения фона при открытии попапа
+
+  //добавление и скрытие блока для затемнения фона при открытии попапа
   $('.popup-report').after("<div class='popup-report__overlay'></div>");
   $('.popup-report, .popup-report__overlay').hide();
+
   //окрытие попапа при нажатии на ссылки
   $('.basic-btn').click(function (evt) {
-      evt.preventDefault();
-      $('.popup-report, .popup-report__overlay').fadeIn(500);
+    evt.preventDefault();
+    $('.popup-report, .popup-report__overlay').fadeIn(500);
 
-    })
-    //закрытие попапа при нажатии на крестик или по затемненному фону
+  })
+
+  //закрытие попапа при нажатии на крестик или по затемненному фону
   $('.popup-report__close, .popup-report__overlay').click(function () {
-      $('.popup-report, .popup-report__overlay').fadeOut(500);
-      if ($('.popup-report').hasClass('popup-report__shake')) {
-        $('.popup-report').removeClass('popup-report__shake');
-      }
-    })
-    //закрытие попапа при нажатии на клавишу esc  
+    $('.popup-report, .popup-report__overlay').fadeOut(500);
+    if ($('.popup-report').hasClass('popup-report__shake')) {
+      $('.popup-report').removeClass('popup-report__shake');
+    }
+  })
+
+  //закрытие попапа при нажатии на клавишу esc  
   $(this).keydown(function (eventObject) {
     if (eventObject.which == 27)
       $('.popup-report, .popup-report__overlay').fadeOut(500);
@@ -34,45 +48,24 @@ $(document).ready(function (e) {
 
 
   /**
-    Добавление масок для полей форм, валидация
+    Валидация формы попапа
+    ----------------------------------------
   */
 
-  /*------------------------------------------*/
-  var validPhone = 0;
-  var validName = 0;
+  /** 
+   * @const
+   * @type {number}
+   */
   var popupValidPhone = 0;
+
+  /** 
+   * @const
+   * @type {number}
+   */
   var popupValidName = 0;
-  var validPhoneCont = 0;
-  var validNameCont = 0;
-  //проверка после загрузки
-  var $inputedPhone = $('.call-master [name=phone]').val();
-  if ($inputedPhone === '') {
-    validPhone = 0;
-  } else {
-    validPhone = 1;
-  }
-  if (Inputmask.isValid($inputedPhone, {
-      alias: "+7 (999) 999-9999"
-    })) {
-    var validPhone = 2;
-  };
 
-
-
-  var $inputedName = $('.call-master [name=name]').val();
-  if ($inputedName === '') {
-    validName = 0;
-  } else {
-    validName = 1;
-  }
-  if (Inputmask.isValid($inputedName, {
-      alias: "a{2,20} "
-    })) {
-    var validName = 2;
-  };
-
-
-
+  //проверка изначальных состояний и валидация формы при загрузке стрницы
+  //поле телефон
   var $inputedPhonePopup = $('.popup-report__form [name=phone]').val();
   if (Inputmask.isValid($inputedPhonePopup, {
       alias: "+7 (999) 999-9999"
@@ -80,6 +73,8 @@ $(document).ready(function (e) {
     var popupValidPhone = 1;
   };
 
+  //проверка изначальных состояний и валидация формы при загрузке стрницы
+  //поле телефон
   var $inputedNamePopup = $('.popup-report__form [name=name]').val();
   if (Inputmask.isValid($inputedNamePopup, {
       alias: "a{2,20} "
@@ -87,184 +82,7 @@ $(document).ready(function (e) {
     var popupValidName = 1;
   };
 
-  /**
-    Валидация формы вызова мастера в секции intro
-  */
-
-  //валидация поля телефон
-  $('#input-phone').inputmask("+7 (999) 999-9999", {
-    "onincomplete": function () {
-      var $currentPhone = $('.call-master [name=phone]').val();
-      if ($currentPhone === '') {
-        validPhone = 0;
-      } else {
-        validPhone = 1;
-      }
-    },
-    "oncomplete": function () {
-      validPhone = 2;
-      $(this).removeClass('call-master__input--invalid');
-      removeErr('input-phone', 'call-master__errorMsg');
-    },
-    "onKeyValidation": function () {
-      removeErr('input-phone', 'call-master__errorMsg');
-    }
-  });
-
-  //валидация поля имя
-  $('#input-name').inputmask("a{2,20} [aa{2,20}]", {
-    "onincomplete": function () {
-      var $currentName = $('.call-master [name=name]').val();
-      if ($currentName === '') {
-        validName = 0;
-      } else {
-        validName = 1;
-      }
-
-    },
-
-
-    "oncomplete": function () {
-      validName = 2;
-      $(this).removeClass('call-master__input--invalid');
-      removeErr('input-name', 'call-master__errorMsg');
-    },
-    "onKeyValidation": function () {
-      removeErr('input-name', 'call-master__errorMsg');
-    },
-    "placeholder": " ",
-    "showMaskOnHover": false
-  });
-
-
-
-  //проверка перед отправкой формы
-  $('.call-master__btn').click(function (evt) {
-    if (validPhone === 0) {
-      evt.preventDefault();
-      $('#input-phone').addClass('call-master__input--invalid');
-
-      if (!$("label[for='input-phone']").children().hasClass("call-master__errorMsg")) {
-        showErr('input-phone', 'call-master__errorMsg', true, 'Введите номер телефона');
-      }
-    } else if (validPhone === 1) {
-      evt.preventDefault();
-      $('#input-phone').addClass('call-master__input--invalid');
-
-      if (!$("label[for='input-phone']").children().hasClass("call-master__errorMsg")) {
-        showErr('input-phone', 'call-master__errorMsg', true, 'Введите номер полностью');
-      }
-    }
-
-    if (validName === 0) {
-      evt.preventDefault();
-      $('#input-name').addClass('call-master__input--invalid');
-      if (!$("label[for='input-name']").children().hasClass("call-master__errorMsg")) {
-        showErr('input-name', 'call-master__errorMsg', true, 'Введите имя');
-      }
-    } else if (validName === 1) {
-      evt.preventDefault();
-      $('#input-name').addClass('call-master__input--invalid');
-      if (!$("label[for='input-name']").children().hasClass("call-master__errorMsg")) {
-        showErr('input-name', 'call-master__errorMsg', true, 'Введите имя минимум из 2 букв');
-      }
-    }
-  });
-
-
-
-  /**
-    Валидация формы на странице contacts
-  */
-
-  ////валидация поля телефон
-  $('#contacts-phone').inputmask("+7 (999) 999-9999", {
-    "onincomplete": function () {
-      var $currentPhone = $('.contacts-form [name=phone]').val();
-      if ($currentPhone === '') {
-        validPhoneCont = 0;
-      } else {
-        validPhoneCont = 1;
-      }
-    },
-    "oncomplete": function () {
-      validPhoneCont = 2;
-      $(this).removeClass('contacts-form__input--invalid');
-      removeErr('contacts-phone', 'contacts-form__errorMsg');
-    },
-    "onKeyValidation": function () {
-      removeErr('contacts-phone', 'contacts-form__errorMsg');
-    }
-  });
-
-
-
-  //валидация поля имя
-  $('#contacts-name').inputmask("a{2,20} [aa{2,20}]", {
-    "onincomplete": function () {
-      var $currentName = $('.contacts-form [name=name]').val();
-      if ($currentName === '') {
-        validNameCont = 0;
-      } else {
-        validNameCont = 1;
-      }
-
-    },
-
-
-    "oncomplete": function () {
-      validNameCont = 2;
-      $(this).removeClass('contacts-form__input--invalid');
-      removeErr('contacts-name', 'contacts-form__errorMsg');
-    },
-    "onKeyValidation": function () {
-      removeErr('contacts-name', 'contacts-form__errorMsg');
-    },
-    "placeholder": " ",
-    "showMaskOnHover": false
-  });
-
-  $('.contacts-form__btn').click(function (evt) {
-    if (validPhoneCont === 0) {
-      evt.preventDefault();
-      $('#contacts-phone').addClass('contacts-form__input--invalid');
-
-      if (!$("label[for='contacts-phone']").children().hasClass("call-master__errorMsg")) {
-        showErr('contacts-phone', 'contacts-form__errorMsg', true, 'Введите номер телефона');
-      }
-    }
-    if (validPhoneCont === 1) {
-      evt.preventDefault();
-      $('#contacts-phone').addClass('contacts-form__input--invalid');
-
-      if (!$("label[for='contacts-phone']").children().hasClass("call-master__errorMsg")) {
-        showErr('contacts-phone', 'contacts-form__errorMsg', true, 'Введите номер полностью');
-      }
-    }
-
-    if (validNameCont === 0) {
-      evt.preventDefault();
-      $('#contacts-name').addClass('contacts-form__input--invalid');
-      if (!$("label[for='contacts-name']").children().hasClass("call-master__errorMsg")) {
-        showErr('contacts-name', 'contacts-form__errorMsg', true, 'Введите имя');
-      }
-    }
-
-    if (validNameCont === 1) {
-      evt.preventDefault();
-      $('#contacts-name').addClass('contacts-form__input--invalid');
-      if (!$("label[for='contacts-name']").children().hasClass("call-master__errorMsg")) {
-        showErr('contacts-name', 'contacts-form__errorMsg', true, 'Введите имя минимум из 2 букв');
-      }
-    }
-  });
-
-
-  /**
-    Валидация формы попапа
-  */
-
-
+  //добавление маски на поле телефон
   $('#report-phone').inputmask("+7 (999) 999-9999", {
     "onincomplete": function () {
       popupValidPhone = 0;
@@ -282,6 +100,7 @@ $(document).ready(function (e) {
 
   })
 
+  //добавление маски на поле имя
   $('#report-name').inputmask("a{2,20} [aa{2,20}]", {
     "placeholder": " ",
     "showMaskOnHover": false,
@@ -300,8 +119,10 @@ $(document).ready(function (e) {
     }
   });
 
-  $('.popup-report__btn').click(function (evt) {
+  //валидация формы при нажатии на кнопку отправить
 
+  $('.popup-report__btn').click(function (evt) {
+    //проверка заполненности поля телефон
     if (popupValidPhone === 0) {
       evt.preventDefault();
       $('#report-phone').addClass('popup-report__input--invalid');
@@ -309,34 +130,39 @@ $(document).ready(function (e) {
       if (!$("label[for='report-phone']").children().hasClass("popup-report__error")) {
         showErr('report-phone', 'popup-report__error');
       }
+      //добавление класса анимации
+      if ($('.popup-report').hasClass('popup-report__shake')) {
+        $('.popup-report').removeClass('popup-report__shake');
+      }
+      $('.popup-report').addClass('popup-report__shake');
     }
-
+    //проверка заполненности поля телефон
     if (popupValidName === 0) {
       evt.preventDefault();
       $('#report-name').addClass('popup-report__input--invalid');
       if (!$("label[for='input-name']").children().hasClass("popup-report__error")) {
         showErr('report-name', 'popup-report__error');
       }
-    }
-
-    if (popupValidName === 0 || popupValidPhone === 0) {
+      //добавление класса анимации
       if ($('.popup-report').hasClass('popup-report__shake')) {
         $('.popup-report').removeClass('popup-report__shake');
       }
       $('.popup-report').addClass('popup-report__shake');
     }
+
+
   });
-  
-  /**
-  закрытие попапа при отправке формы
-  */
-  
-  $('.popup-report__form').submit(function(){
+
+
+  //закрытие попапа при отправке формы
+  $('.popup-report__form').submit(function () {
     $('.popup-report, .popup-report__overlay').fadeOut(500);
     if ($('.popup-report').hasClass('popup-report__shake')) {
       $('.popup-report').removeClass('popup-report__shake');
     }
   })
+
+
   /**
     функция показа сообщения об ошибки
   * @param {HTMLElement} field
@@ -372,41 +198,18 @@ $(document).ready(function (e) {
     }
   }
 
- 
-  /**
-     функция удаления класса с ошибкой и сообщения об ошибки при клике вне формы
-   * @param {HTMLElement} form
-   * @param {string} name
-   * @param {string} phone
-   * @param {string} errorClass
-   * @param {string} errorMsg
-   */
 
-  function clickOut(form, name, phone, errorClass, errorMsg, event) {
-    var currentForm = $(form); // тут указываем ID элемента
-    console.log(currentForm);
-    if (!currentForm.is(event.target) // если клик был не по нашему блоку
-      && currentForm.has(event.target).length === 0) { // и не по его дочерним элементам
-      removeErr(name, errorMsg);
-      removeErr(phone, errorMsg);
-      $('#' + name).removeClass(errorClass);
-      $('#' + phone).removeClass(errorClass);
+
+  $(document).mouseup(function (e) {
+    var currentForm = $('.popup-report'); // тут указываем ID элемента
+    if (!currentForm.is(e.target) // если клик был не по нашему блоку
+      && currentForm.has(e.target).length === 0) { // и не по его дочерним элементам
+      removeErr('report-name', 'popup-report__error');
+      removeErr('report-phone', 'popup-report__error');
+      $('#report-name').removeClass('popup-report__input--invalid');
+      $('#report-phone').removeClass('popup-report__input--invalid');
     }
-  }
-  /**
-    Вызов функции clickOut для всех форм при клике вне формы
-  */
-  $(document).mouseup(function(e) {
-    clickOut('.call-master', 'input-name', 'input-phone', 'call-master__input--invalid', 'call-master__errorMsg', e);
   })
-  
-  $(document).mouseup(function(ev) {
-    clickOut('.contacts-form', 'contacts-name', 'contacts-phone', 'contacts-form__input--invalid', 'contacts-form__errorMsg', ev);
-  })
-  
-  $(document).mouseup(function(evt) {
-    clickOut('.popup-report', 'report-name', 'report-phone', 'popup-report__input--invalid', 'popup-report__error', evt);
-  })
-  
+
 
 });
