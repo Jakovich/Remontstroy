@@ -70,10 +70,12 @@ $(document).ready(function () {
 
     for (var j = 0; j < arrResult.length; j++) {
       arrResult[j].classList.remove("portfolio__item--hidden");
-      var photos = arrResult[j].querySelectorAll("img");
+      var photos = arrResult[j].querySelectorAll("a");
       for (var i = 0; i < photos.length; i++) {
         var atr = photos[i].getAttribute("data-src");
-        photos[i].setAttribute("src", atr);
+        var img = new Image();
+        img.src = atr;
+        photos[i].insertBefore(img, photos[i].firstChild);
       }
     }
     //скрытие кнопки "Смотреть еще", если больше нет элементов к показу
