@@ -81,6 +81,15 @@ gulp.task("index-sprite", function(){
     spriteData.css.pipe(gulp.dest('less/sprites')); 
 });
 
+gulp.task("common-sprite", function(){
+  var spriteData = gulp.src('img/common-icons/*.png').pipe(spritesmith({
+    imgName: 'common-sprite.png',
+    cssName: 'common-sprite.less'
+  }));
+    spriteData.img.pipe(gulp.dest('img')); 
+    spriteData.css.pipe(gulp.dest('less/sprites')); 
+});
+
 gulp.task("copyHtml", function() {
   gulp.src("*.html")
   .pipe(copy())
