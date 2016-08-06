@@ -36,18 +36,19 @@
   a {
     display: block;
     position: relative;
-     &:before {
+      &:before {
         position: absolute;
         content: '';
-        width: 24px;
-        height: 24px;
-        background-image: url('../img/plus.png');
+        width: @icon-plus-width;
+        height: @icon-plus-height;
+        background-image: url('../img/common-sprite.png');
+        background-position: @icon-plus-offset-x @icon-plus-offset-y;
         left: 50%;
         margin-left: -12px;
         top: 45%;
         z-index: 5;
-       opacity: 0;
-       -webkit-transition: all 0.3s ease;
+        opacity: 0;
+        -webkit-transition: all 0.3s ease;
         -moz-transition: all 0.3s ease;
         -o-transition: all 0.3s ease;
 	     transition: all 0.3s ease;
