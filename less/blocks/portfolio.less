@@ -1,14 +1,19 @@
+/*
+Страница Наши работы (portfolio.html)
+*/
 .portfolio {
   background-color: #deceb6;
   padding: 5px 0;
   text-align: center;
 }
+
 .portfolio__wrapper {
   max-width: 1180px;
   min-width: 720px;
   margin: 0 auto;
   padding: 0 15px;
 }
+
 .portfolio__text {
   font-size: 30px;
   font-style: italic;
@@ -19,19 +24,23 @@
   top: 10px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
 }
+
 .portfolio__text--before {
   color: #ffffff;
   left: 5%;
 }
+
 .portfolio__text--after {
   color: #e1c78c;
   padding: 10px 14px;
   font-weight: bold;
   left: 58%;
 }
+
 .portfolio__img-big {
   position: relative;
 }
+
 .portfolio__title {
   margin-top: 30px;
   text-align: center;
@@ -49,6 +58,7 @@
     height: 3px;
     border-bottom: 2px dashed @burgundy;
   }
+  
   &:after {
     content: '';
     position: absolute;
@@ -59,6 +69,7 @@
     border-bottom: 2px dashed @burgundy;
   }
 }
+
 .portfolio__link {
   text-align: center;
   display: inline-block;
@@ -91,6 +102,7 @@
     background-position: 0 -44px;
   }
 }
+
 .portfolio__item {
   .clearfix();
   text-align: left;
@@ -101,24 +113,29 @@
 .portfolio__item--hidden {
   display: none;
 }
+
 .portfolio__left-images {
   float: left;
   width: 49%;
 }
+
 .portfolio__explic {
   font-size: 16px;
   color: @burgundy;
   text-align: left;
   margin-top: 12px;
 }
+
 .portfolio__img-sm {
   display: inline-block;
   margin-left: 4%;
   width: 48%;
   position: relative;
+  
   a {
     position: relative;
     display: inline-block;
+    
     &:before {
       position: absolute;
       content: '';
@@ -136,6 +153,7 @@
       -o-transition: all 0.3s ease;
       transition: all 0.3s ease;
     }
+    
     &:hover {
       &:before {
         opacity: 1;
@@ -149,10 +167,13 @@
         
       }
     }
+    
   }
+  
   &:first-child {
     margin-left: 0;
   }
+  
   img {
     width: 269px;
     height: auto;
@@ -160,6 +181,7 @@
     border: 3px solid #f5eee3;
   }
 }
+
 .portfolio__img-big {
   position: relative;
   a {
@@ -180,10 +202,12 @@
       -o-transition: all 0.3s ease;
       transition: all 0.3s ease;
     }
+    
     &:hover {
       &:before {
         opacity: 1;
       }
+      
       img {
         -webkit-transition: 0.2s -webkit-filter linear;
         -moz-transition: 0.2s -moz-filter linear;
@@ -193,18 +217,22 @@
       }
     }
   }
+  
   img {
     border: 3px solid #f5eee3;
     border-radius: 10px;
   }
 }
+
 .portfolio__right-images {
   float: right;
   width: 49%;
 }
+
 .portfolio__bottom {
   margin-bottom: 55px;
   margin-top: 25px;
+  
   span {
     font-size: 34px;
     color: @burgundy;
@@ -212,6 +240,7 @@
     vertical-align: bottom;
   }
 }
+
 .portfolio__more {
   display: block;
   margin: 0 auto;
@@ -236,6 +265,7 @@
   font-weight: bold;
   margin-top: 35px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  
   &:hover {
     background-color: #ddba92;
     background: linear-gradient(to top, #dcb383 0%, #d9c3a9 50%, #d9c3a9 50%, #f0eeed 100%);
@@ -244,17 +274,20 @@
     background-position: 0 -44px;
   }
 }
+
 @media (max-width: 1150px) {
   .portfolio__text {
     font-size: 25px;
   }
 }
+
 @media (max-width: 940px) {
   .portfolio__left-images {
     float: none;
     width: 100%;
     text-align: center;
   }
+  
   .portfolio__img-sm {
     margin-left: 0;
     text-align: left;
@@ -264,16 +297,19 @@
       margin-right: 4%;
     }
   }
+  
   .portfolio__right-images {
     margin-top: 30px;
     float: none;
     width: 100%;
     text-align: center;
   }
+  
   .portfolio__explic {
     width: 578px;
     margin: 0 auto;
   }
+  
   .portfolio__title {
     font-size: 45px;
     &:before {
@@ -283,6 +319,7 @@
       width: 27%
     }
   }
+  
   .portfolio__bottom {
     span {
       font-size: 31px;
@@ -291,13 +328,16 @@
       vertical-align: bottom;
     }
   }
+  
   .portfolio__text {
     font-size: 30px;
   }
+  
   .portfolio__img-big {
     width: 586px;
     margin: 0 auto;
   }
+  
   .portfolio__link {
     width: 180px;
   }

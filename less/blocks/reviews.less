@@ -1,18 +1,25 @@
+/*
+Страница Отзывы (reviews.html)
+*/
+
 .reviews {
   background-color: #f7f1d9;
 }
+
 .reviews__wrapper {
   max-width: 1180px;
   min-width: 720px;
   margin: 0 auto;
   padding: 5px 15px;
 }
+
 .reviews__title {
   font-size: 40px;
   text-align: left;
   font-weight: normal;
   color: @burgundy;
 }
+
 .reviews__text {
   padding-top: 20px;
   font-size: 16px;
@@ -20,12 +27,14 @@
   border-top: 2px dashed @burgundy;
   margin-bottom: 0;
 }
+
 .reviews__images {
   font-size: 0;
   border-bottom: 2px dashed @burgundy;
   padding-top: 20px;
   margin-bottom: 40px;
 }
+
 .reviews__image {
   display: inline-block;
   margin-right: 5.2%;
@@ -33,6 +42,7 @@
   width: 21%;
   font-size: 16px;
   vertical-align: top;
+  
   a {
     display: block;
     position: relative;
@@ -57,6 +67,7 @@
       &:before {
        opacity: 1;
       }
+      
       img {
          -webkit-transition: 0.3s -webkit-filter ease;
         -moz-transition: 1s -moz-filter ease;
@@ -67,6 +78,7 @@
       }
     }
   }
+  
   img {
     width: 100%;
   }
@@ -74,10 +86,12 @@
     margin-right: 0;
   }
 }
+
 .reviews__name {
   color: @burgundy;
   font-style: italic;
 }
+
 .reviews__contacts {
   text-align: center;
   font-size: 34px;
@@ -90,10 +104,12 @@
     color: @burgundy;
   }
 }
+
 @media (max-width: 1000px) {
   .reviews__title {
     font-size: 37px;
   }
+  
   .reviews__image {
     width: 29%;
     margin-right: 6%;
@@ -104,6 +120,7 @@
       margin-right: 0;
     }
   }
+  
   .reviews__name {
     font-size: 14px;
   }
