@@ -67,7 +67,6 @@
   height: 200px;
   position: relative;
   a {
-    
     &:before {
       position: absolute;
         content: '';
@@ -80,19 +79,19 @@
         z-index: 10;
         opacity: 0;
         filter: alpha(opacity=20);
-        -webkit-transition: all 0.3s ease;
-        -moz-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
-	     transition: all 0.3s ease;
+        -webkit-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+	     transition: all 0.4s ease;
     }
     &:hover {
       &:before {
        opacity: 1; 
       }
       img {
-        -webkit-transition: 0.2s -webkit-filter linear;
-        -moz-transition: 0.2s -moz-filter linear;
-        -o-transition: 0.2s -o-filter linear;
+        -webkit-transition: 0.3s -webkit-filter linear;
+        -moz-transition: 0.3s -moz-filter linear;
+        -o-transition: 0.3s -o-filter linear;
         transition: 0.3s filter ease, 0.3s -webkit-filter linear;
         filter: blur(3px);
         

@@ -5,7 +5,7 @@
 */
 "use strict";
 $(document).ready(function () {
-  var portfolioItem = $(".portfolio__item");
+  var portfolioItems = $(".portfolio__item");
   var linkMore = $(".portfolio__more");
   
   /**
@@ -28,23 +28,23 @@ $(document).ready(function () {
   */
   
   function addTitle() {
-    var portfolioItem = document.querySelectorAll(".portfolio__item");
-    for (var i = 0; i < portfolioItem.length; i++) {
+    
+    for (var i = 0; i < portfolioItems.length; i++) {
       //берется значение подписи к картинке
-      var currentExplic = portfolioItem[i].querySelector('.portfolio__explic');
+      var currentExplic = portfolioItems[i].querySelector('.portfolio__explic');
       var currentText = currentExplic.innerText;
       //добавляется фраза 'ДО и ПОСЛЕ'
       var currentTitle = 'ДО и ПОСЛЕ: ' + currentText;
-      var currentImgBig = portfolioItem[i].querySelector('.portfolio__img-big');
-      var currenImgBigLink = currentImgBig.querySelector('a');
-      var currentImgSml = portfolioItem[i].querySelector('.portfolio__left-images');
-      var currentImgSmlLinks = currentImgSml.querySelectorAll('a');
-      for (var j = 0; j < currentImgSmlLinks.length; j++) {
-        currentImgSmlLinks[j].setAttribute('title', currentText)
+      var imgBig = portfolioItems[i].querySelector('.portfolio__img-big');
+      var imgBigLink = imgBig.querySelector('a');
+      var imgSmlWrap = portfolioItems[i].querySelector('.portfolio__left-images');
+      var imgSmlLinks = imgSmlWrap.querySelectorAll('a');
+      for (var j = 0; j < imgSmlLinks.length; j++) {
+        imgSmlLinks[j].setAttribute('title', currentText)
       }
       //вставляется в качестве значения атрибута ссылки, из которого colorbox 
       //берет название к слайду
-      currenImgBigLink.setAttribute('title', currentTitle); 
+      imgBigLink.setAttribute('title', currentTitle); 
     }
     
   }
@@ -52,9 +52,9 @@ $(document).ready(function () {
   addTitle();
   
   //выбираются все скрытые строчки портфолио, имеющие класс 'portfolio__item--hidden'
-  for (var i = 0; i < portfolioItem.length; i++) {
-    if (portfolioItem[i].classList.contains('portfolio__item--hidden')) {
-      portfolioItemInabled.push(portfolioItem[i]);
+  for (var i = 0; i < portfolioItems.length; i++) {
+    if (portfolioItems[i].classList.contains('portfolio__item--hidden')) {
+      portfolioItemInabled.push(portfolioItems[i]);
     }
   }
 
@@ -114,8 +114,8 @@ $(document).ready(function () {
   */
   
   function showColorbox() {
-    var $portfolioItems = $(".portfolio__item:visible");
-    $portfolioItems.find('a').colorbox({
+    var $portfolioItemsVis = $(".portfolio__item:visible");
+    $portfolioItemsVis.find('a').colorbox({
       'rel': 'gallery',
       'maxWidth': '90%',
       'transition': 'fade',
