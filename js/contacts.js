@@ -50,59 +50,55 @@ $(document).ready(function() {
     ----------------------------------------
   */
 
+   /** 
+   * @const
+   * @type {number}
+   */
+  var validPhone = 0;
   /** 
    * @const
    * @type {number}
-  */
-  var validPhoneCont = 0;
-  /** 
-   * @const
-   * @type {number}
-  */
-  var validNameCont = 0;
-  
+   */
+  var validName = 0;
   //проверка изначальных состояний и валидация формы при загрузке стрницы
-   //поле телефон
+  //поле телефон
   var $inputedPhone = $('.contacts-form [name=phone]').val();
   if ($inputedPhone === '') {
-    validPhoneCont = 0;
+    validPhone = 0;
   } else {
-    validPhoneCont = 1;
+    validPhone = 1;
   }
   if (Inputmask.isValid($inputedPhone, {
       alias: "+7 (999) 999-9999"
     })) {
-    validPhoneCont = 2;
+    var validPhone = 2;
   };
-  
-   //поле имя
 
+  //поле имя
   var $inputedName = $('.contacts-form [name=name]').val();
   if ($inputedName === '') {
-    validNameCont = 0;
+    validName = 0;
   } else {
-    validNameCont = 1;
+    validName = 1;
   }
   if (Inputmask.isValid($inputedName, {
       alias: "a{2,20} "
     })) {
-    validNameCont = 2;
+    var validName = 2;
   };
-  
-  
 
   //добавление маски на поле телефон
   $('#contacts-phone').inputmask("+7 (999) 999-9999", {
     "onincomplete": function () {
       var $currentPhone = $('.contacts-form [name=phone]').val();
       if ($currentPhone === '') {
-        validPhoneCont = 0;
+        validPhone = 0;
       } else {
-        validPhoneCont = 1;
+        validPhone = 1;
       }
     },
     "oncomplete": function () {
-      validPhoneCont = 2;
+      validPhone = 2;
       $(this).removeClass('contacts-form__input--invalid');
       removeErr('contacts-phone', 'contacts-form__errorMsg');
     },
@@ -111,21 +107,20 @@ $(document).ready(function() {
     }
   });
 
-
-
   //добавление маски на поле имя
   $('#contacts-name').inputmask("a{2,20} [aa{2,20}]", {
     "onincomplete": function () {
       var $currentName = $('.contacts-form [name=name]').val();
       if ($currentName === '') {
-        validNameCont = 0;
+        validName = 0;
       } else {
-        validNameCont = 1;
+        validName = 1;
       }
 
     },
+
     "oncomplete": function () {
-      validNameCont = 2;
+      validName = 2;
       $(this).removeClass('contacts-form__input--invalid');
       removeErr('contacts-name', 'contacts-form__errorMsg');
     },
@@ -135,36 +130,38 @@ $(document).ready(function() {
     "placeholder": " ",
     "showMaskOnHover": false
   });
-  
+
+
+
   //валидация формы при нажатии на кнопку отправить
   $('.contacts-form__btn').click(function (evt) {
     //проверка заполненности поля телефон
-    if (validPhoneCont === 0) {
+    if (validPhone === 0) {
       evt.preventDefault();
       $('#contacts-phone').addClass('contacts-form__input--invalid');
 
-      if (!$("label[for='contacts-phone']").children().hasClass("call-master__errorMsg")) {
+      if (!$("label[for='contacts-phone']").children().hasClass("contacts-form__errorMsg")) {
         showErr('contacts-phone', 'contacts-form__errorMsg', true, 'Введите номер телефона');
       }
-    } else if (validPhoneCont === 1) {
+    } else if (validPhone === 1) {
       evt.preventDefault();
       $('#contacts-phone').addClass('contacts-form__input--invalid');
 
-      if (!$("label[for='contacts-phone']").children().hasClass("call-master__errorMsg")) {
+      if (!$("label[for='contacts-phone']").children().hasClass("contacts-form__errorMsg")) {
         showErr('contacts-phone', 'contacts-form__errorMsg', true, 'Введите номер полностью');
       }
     }
     //проверка заполненности поля имя
-    if (validNameCont === 0) {
+    if (validName === 0) {
       evt.preventDefault();
       $('#contacts-name').addClass('contacts-form__input--invalid');
-      if (!$("label[for='contacts-name']").children().hasClass("call-master__errorMsg")) {
+      if (!$("label[for='contacts-name']").children().hasClass("contacts-form__errorMsg")) {
         showErr('contacts-name', 'contacts-form__errorMsg', true, 'Введите имя');
       }
-    } else if (validNameCont === 1) {
+    } else if (validName === 1) {
       evt.preventDefault();
       $('#contacts-name').addClass('contacts-form__input--invalid');
-      if (!$("label[for='contacts-name']").children().hasClass("call-master__errorMsg")) {
+      if (!$("label[for='contacts-name']").children().hasClass("contacts-form__errorMsg")) {
         showErr('contacts-name', 'contacts-form__errorMsg', true, 'Введите имя минимум из 2 букв');
       }
     }

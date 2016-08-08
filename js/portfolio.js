@@ -79,11 +79,16 @@ $(document).ready(function () {
       arrResult[j].classList.remove("portfolio__item--hidden");
       var photos = arrResult[j].querySelectorAll("a");
       for (var i = 0; i < photos.length; i++) {
+        //берется значение атрибута data-src ссылок
         var atr = photos[i].getAttribute("data-src");
+        //создается новый объект img
         var img = new Image();
+        //присвается значение src, начинается загрузка
         img.src = atr;
+        //находится текст с подписи к фотографиям
         var currentExplicItem = photos[i].parentNode.parentNode.parentNode;
         var currentExplic = currentExplicItem.querySelector('.portfolio__explic').innerText;
+        //добавляется этот текст как значение атрибута alt 
         img.setAttribute('alt', currentExplic);
         photos[i].insertBefore(img, photos[i].firstChild);
       }
