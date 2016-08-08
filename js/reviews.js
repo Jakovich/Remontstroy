@@ -10,7 +10,7 @@ $(document).ready(function() {
     иницилизация галереи colorbox для всех ссылок,
     расположенных внутри блока '.reviews__images'
   */
-  $('.reviews__images').find('a').colorbox({
+  $('.reviews__image').find('a').colorbox({
     'rel': 'gallery',
     'maxWidth': '90%',
     'transition': 'fade',

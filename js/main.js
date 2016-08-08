@@ -198,7 +198,10 @@ $(document).ready(function () {
     }
   }
 
-
+  /**
+    удаление сообщения об ошибки и класса, 
+    сообщающего об ошибке при клике вне формы
+  */
 
   $(document).mouseup(function (e) {
     var currentForm = $('.popup-report'); // тут указываем ID элемента
