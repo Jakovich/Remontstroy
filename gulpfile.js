@@ -142,11 +142,11 @@ gulp.task("copyJslib", function() {
 
 gulp.task('critical', function () {
     critical.generate({
-        //inline: true,
+        inline: true,
         base: 'build/',
         src: 'index.html',
         dest: 'build/index-critical.html',
-        //minify: true,
+        minify: true,
         dimensions: [{
         height: 800,
         width: 750
