@@ -12,6 +12,7 @@ var server = require("browser-sync");
 var rename = require("gulp-rename");
 var spritesmith = require("gulp.spritesmith");
 var concat = require("gulp-concat");
+var critical = require("critical");
 
 gulp.task("style", function(){
   gulp.src("less/style.less")
@@ -137,6 +138,23 @@ gulp.task("copyJslib", function() {
   .pipe(uglify())
   .pipe(rename('lib.min.js'))
   .pipe(gulp.dest('build/js/vendor'))
+});
+
+gulp.task('critical', function () {
+    critical.generate({
+        //inline: true,
+        base: 'build/',
+        src: 'index.html',
+        dest: 'build/index-critical.html',
+        //minify: true,
+        dimensions: [{
+        height: 800,
+        width: 750
+    }, {
+        height: 900,
+        width: 1400
+    }]
+    });
 });
 
 
