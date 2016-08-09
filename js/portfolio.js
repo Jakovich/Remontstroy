@@ -39,11 +39,14 @@ $(document).ready(function () {
       var imgBigLink = imgBig.querySelector('a');
       var imgSmlWrap = portfolioItems[i].querySelector('.portfolio__left-images');
       var imgSmlLinks = imgSmlWrap.querySelectorAll('a');
+      //вставляется в качестве значения атрибута ссылкам маленьких картинок, 
+      //из которого colorbox берет название к слайду 
+      
       for (var j = 0; j < imgSmlLinks.length; j++) {
         imgSmlLinks[j].setAttribute('title', currentText)
       }
-      //вставляется в качестве значения атрибута ссылки, из которого colorbox 
-      //берет название к слайду
+      //вставляется в качестве значения атрибута ссылки к большой картинке
+      //из которого colorbox берет название к слайду
       imgBigLink.setAttribute('title', currentTitle); 
     }
     
@@ -68,13 +71,13 @@ $(document).ready(function () {
   */
 
   function renderPhotos(arr, page, link) {
-
+    //начальной значение выборки элементов к показу
     var from = page * PAGE_SIZE;
-
+    //конечное значение выборки элементов к показу
     var to = from + PAGE_SIZE;
-
+    //выборка из массива скрытых объектов нужных нам элементов
     var arrResult = arr.slice(from, to);
-
+    //показ выбранных элементов
     for (var j = 0; j < arrResult.length; j++) {
       arrResult[j].classList.remove("portfolio__item--hidden");
       var photos = arrResult[j].querySelectorAll("a");
