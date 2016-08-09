@@ -198,18 +198,21 @@ $(document).ready(function() {
   * @param {boolean} text
   * @param *{string} errorMessage
   */
+ 
+  
   function showErr(field, errClass, text, errorMessage) {
-    var errorSpan = document.createElement("span");
+    var $errorSpan = $('<span></span>');
 
     if (text) {
-      var errorMessage = document.createTextNode(errorMessage);
-      errorSpan.appendChild(errorMessage);
+      $errorSpan.append(errorMessage);
     }
 
-    errorSpan.className = errClass;
+    $errorSpan.addClass(errClass);
+    $errorSpan.hide();
 
     var $fieldLabel = $("label[for='" + field + "']");
-    $fieldLabel.append(errorSpan);
+    $fieldLabel.append($errorSpan);
+    $errorSpan.fadeIn(400);
   }
 
   /**
@@ -222,7 +225,7 @@ $(document).ready(function() {
     var $fieldLabel = $("label[for='" + field + "']");
 
     if ($fieldLabel.children().hasClass(className)) {
-      $fieldLabel.find('.' + className).remove();
+      $fieldLabel.find('.' + className).fadeOut(400, function() { $(this).remove(); });
     }
   }
 

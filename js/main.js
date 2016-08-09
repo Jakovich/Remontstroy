@@ -164,24 +164,32 @@ $(document).ready(function () {
 
 
   /**
+    Вспомогательные функции
+  */
+  
+  
+  /**
     функция показа сообщения об ошибки
   * @param {HTMLElement} field
   * @param {string} errClass
   * @param {boolean} text
   * @param *{string} errorMessage
   */
+ 
+  
   function showErr(field, errClass, text, errorMessage) {
-    var errorSpan = document.createElement("span");
+    var $errorSpan = $('<span></span>');
 
     if (text) {
-      var errorMessage = document.createTextNode(errorMessage);
-      errorSpan.appendChild(errorMessage);
+      $errorSpan.append(errorMessage);
     }
 
-    errorSpan.className = errClass;
+    $errorSpan.addClass(errClass);
+    $errorSpan.hide();
 
     var $fieldLabel = $("label[for='" + field + "']");
-    $fieldLabel.append(errorSpan);
+    $fieldLabel.append($errorSpan);
+    $errorSpan.fadeIn(300);
   }
 
   /**
@@ -194,7 +202,7 @@ $(document).ready(function () {
     var $fieldLabel = $("label[for='" + field + "']");
 
     if ($fieldLabel.children().hasClass(className)) {
-      $fieldLabel.find('.' + className).remove();
+      $fieldLabel.find('.' + className).fadeOut(300, function() { $(this).remove(); });
     }
   }
 
