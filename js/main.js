@@ -7,11 +7,6 @@
 "use strict";
 $(document).ready(function () {
 
-  /**
-    Добавление в head ссылки на googleFonts
-    --------------------------------------
-  */
-  $("head").append("<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>");
              
   /**
    Открытие и закрытие попапа
@@ -37,7 +32,7 @@ $(document).ready(function () {
     }
   })
 
-  //закрытие попапа при нажатии на клавишу esc  
+  //закрытие попапа при нажатии на клавишу esc
   $(this).keydown(function (eventObject) {
     if (eventObject.which == 27)
       $('.popup-report, .popup-report__overlay').fadeOut(500);
@@ -52,13 +47,13 @@ $(document).ready(function () {
     ----------------------------------------
   */
 
-  /** 
+  /**
    * @const
    * @type {number}
    */
   var popupValidPhone = 0;
 
-  /** 
+  /**
    * @const
    * @type {number}
    */
@@ -166,8 +161,8 @@ $(document).ready(function () {
   /**
     Вспомогательные функции
   */
-  
-  
+
+
   /**
     функция показа сообщения об ошибки
   * @param {HTMLElement} field
@@ -175,8 +170,8 @@ $(document).ready(function () {
   * @param {boolean} text
   * @param *{string} errorMessage
   */
- 
-  
+
+
   function showErr(field, errClass, text, errorMessage) {
     var $errorSpan = $('<span></span>');
 
@@ -207,7 +202,7 @@ $(document).ready(function () {
   }
 
   /**
-    удаление сообщения об ошибки и класса, 
+    удаление сообщения об ошибки и класса,
     сообщающего об ошибке при клике вне формы
   */
 
