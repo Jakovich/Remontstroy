@@ -13,14 +13,20 @@ var rename = require("gulp-rename");
 var spritesmith = require("gulp.spritesmith");
 var concat = require("gulp-concat");
 var critical = require("critical");
+var deploy = require('gulp-gh-pages');
+
+gulp.task("deploy", function () {
+  return gulp.src("build/**/*")
+    .pipe(deploy())
+});
 
 gulp.task("style", function(){
   gulp.src("less/style.less")
-  
+
   .pipe(plumber())
-  
+
   .pipe(less())
-  
+
   .pipe(postcss([
     autoprefixer({browsers: [
       "last 3 version",
@@ -30,19 +36,19 @@ gulp.task("style", function(){
       "last 2 Edge versions",
       "ie >= 8"
     ]})
-    
-    
+
+
   ]))
-  
+
   .pipe(gulp.dest("build/css"))
   .pipe(csso())
   .pipe(rename("style.min.css"))
   .pipe(gulp.dest("build/css"))
   .pipe(server.reload({stream: true}));
-  
+
   gulp.src("less/ie/style_ie.less")
   .pipe(plumber())
-  
+
   .pipe(less())
   .pipe(gulp.dest("build/css"))
   .pipe(csso())
@@ -51,9 +57,9 @@ gulp.task("style", function(){
 });
 
 gulp.task("minjs", function(){
-  
+
   gulp.src("js/main.js")
-  
+
   .pipe(gulp.dest("build/js/"))
   .pipe(uglify())
   .pipe(rename("main.min.js"))
@@ -78,14 +84,14 @@ gulp.task("minjs", function(){
   .pipe(uglify())
   .pipe(rename("reviews.min.js"))
   .pipe(gulp.dest("build/js/"))
-  
+
 });
 
 gulp.task("image", function(){
   return gulp.src("img/**/*.{png,jpg,gif}")
   .pipe(imagemin({
     optimizationLevel: 3,
-    progressive: true 
+    progressive: true
   }))
   .pipe(gulp.dest("build/img"))
 });
@@ -100,8 +106,8 @@ gulp.task("index-sprite", function(){
     imgName: 'index-sprite.png',
     cssName: 'index-sprite.less'
   }));
-    spriteData.img.pipe(gulp.dest('img')); 
-    spriteData.css.pipe(gulp.dest('less/sprites')); 
+    spriteData.img.pipe(gulp.dest('img'));
+    spriteData.css.pipe(gulp.dest('less/sprites'));
 });
 
 gulp.task("common-sprite", function(){
@@ -109,8 +115,8 @@ gulp.task("common-sprite", function(){
     imgName: 'common-sprite.png',
     cssName: 'common-sprite.less'
   }));
-    spriteData.img.pipe(gulp.dest('img')); 
-    spriteData.css.pipe(gulp.dest('less/sprites')); 
+    spriteData.img.pipe(gulp.dest('img'));
+    spriteData.css.pipe(gulp.dest('less/sprites'));
 });
 
 gulp.task("copyHtml", function() {
@@ -166,7 +172,7 @@ gulp.task("show", function(){
     open: true,
     ui: false
   });
-  
+
   gulp.watch("less/**/*.less", ["style"]).on("change", server.reload);
   gulp.watch("*.html", ["copyHtml"]).on("change", server.reload);
   gulp.watch("js/*.js", ["minjs"]).on("change", server.reload);
